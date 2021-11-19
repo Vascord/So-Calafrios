@@ -5,8 +5,8 @@
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public CharacterController controller = default;
-    [SerializeField] public float speed = 12f;
+    [SerializeField] private CharacterController controller = default;
+    [SerializeField] private readonly float speed = 12f;
     private float x;
     private float z;
 
@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
         z = Input.GetAxis("Vertical");
     }
 
+    /// <summary>
+    /// Private method called 60 per second.
+    /// </summary>
     private void FixedUpdate()
     {
         // Update player position with the movement input.
