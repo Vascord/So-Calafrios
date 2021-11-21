@@ -35,7 +35,7 @@ public class MouseLook : MonoBehaviour
         /* Rotates player vision in Y axis and limits the rotation in 80 and 
         -80 degrees. */
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+        xRotation = Mathf.Clamp(xRotation, -70f, 80f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         // Rotates player body with the X camera axis.

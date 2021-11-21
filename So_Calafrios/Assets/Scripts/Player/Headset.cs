@@ -4,6 +4,7 @@ using TMPro;
 public class Headset : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textHeadset;
+    [SerializeField] private Transform invisibleObject;
 
     /// <summary>
     /// Private method called every frame.
@@ -14,6 +15,18 @@ public class Headset : MonoBehaviour
         {
             textHeadset.enabled =
                 (textHeadset.enabled) ? false : true;
+            
+            for(int i = 0; i < invisibleObject.childCount; i++)
+            {
+                if(invisibleObject.GetChild(i).gameObject.activeSelf)
+                {
+                    invisibleObject.GetChild(i).gameObject.SetActive(false);
+                }
+                else
+                {
+                    invisibleObject.GetChild(i).gameObject.SetActive(true);
+                }
+            }
         }
     }
 }
