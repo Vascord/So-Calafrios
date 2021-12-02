@@ -20,6 +20,6 @@ public class ThrowEMP : MonoBehaviour
     {
         GameObject emp = Instantiate(empGrenade, mainCamera.transform.position, transform.rotation);
         Rigidbody rb = emp.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * 500);
+        rb.AddForce(transform.forward * 1500);
     }
 }
