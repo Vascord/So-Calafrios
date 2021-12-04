@@ -6,7 +6,7 @@
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController controller = default;
-    [SerializeField] private readonly float speed = 12f;
+    [SerializeField] private float speed = 12f;
     private float x;
     private float z;
 

@@ -4,6 +4,7 @@ public class Flashlight : MonoBehaviour
 {
 
     [SerializeField] private Light lightFlashlight;
+    [SerializeField] private float lightOnIntensity;
 
     /// <summary>
     /// Private method called every frame.
@@ -13,7 +14,7 @@ public class Flashlight : MonoBehaviour
         if(Input.GetButtonDown("LightToggle"))
         {
             lightFlashlight.intensity =
-                (lightFlashlight.intensity == 1.5f) ? 0 : 1.5f;
+                (lightFlashlight.intensity == lightOnIntensity) ? 0 : lightOnIntensity;
         }
     }
 }
