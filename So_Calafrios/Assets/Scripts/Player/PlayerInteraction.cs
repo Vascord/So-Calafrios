@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private CanvasManager canvasManager = default;
-    private const float MAX_INTERACTION_DISTANCE = 2f;
+    private const float MAX_INTERACTION_DISTANCE = 3f;
     private Transform _cameraTransform;
     private Interactive _currentInteractive;
     private bool _requirementsInInventory;
