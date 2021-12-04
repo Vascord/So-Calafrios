@@ -51,8 +51,6 @@ public class Flashlight : MonoBehaviour
             }
 
             yield return new WaitForSeconds(1f);
-
-            Debug.Log(lightTime);
         }
     }
 }
