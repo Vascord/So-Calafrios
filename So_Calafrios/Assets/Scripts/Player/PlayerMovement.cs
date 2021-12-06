@@ -7,9 +7,17 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private CharacterController controller = default;
     [SerializeField] private float speed = 12f;
-    private float x;
-    private float z;
+    [SerializeField] private AudioSource moveSound = default;
+    [SerializeField] private Animator flashlight = default;
+    private float x, z;
+    private bool firstTimeStoping, firstTimeWalking;
 
+    private void Start()
+    {
+        firstTimeStoping = false;
+        firstTimeWalking = true;
+    }
+    
     /// <summary>
     /// Private method called every frame.
     /// </summary>
@@ -18,6 +26,30 @@ public class PlayerMovement : MonoBehaviour
         // Get the input for the movement.
         x = Input.GetAxis("Horizontal");
         z = Input.GetAxis("Vertical");
+
+        // Conditions for walking sound.
+        if (!Input.GetButton("Horizontal") && !Input.GetButton("Vertical"))
+        {
+            // When player stops.
+            if(firstTimeStoping)
+            {
+                // moveSound.GetComponent<AudioSource>().Stop();
+                flashlight.SetBool("Walking", false);
+                firstTimeStoping = false;
+                firstTimeWalking = true;
+            }
+        }
+        else
+        {
+            // When player is moving.
+            if(firstTimeWalking)
+            {
+                // moveSound.GetComponent<AudioSource>().Play();
+                flashlight.SetBool("Walking", true);
+                firstTimeStoping = true;
+                firstTimeWalking = false;
+            }
+        }
     }
 
     /// <summary>
