@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI = default;
-    // [SerializeField] private GameObject player = default;
+    // [SerializeField] private AudioListener player = default;
     // [SerializeField] private GameObject settings = default;
 
     /// <summary>
@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
-        // player.GetComponent<AudioSource>().Pause();
+        AudioListener.pause = true;
     }
 
     /// <summary>
@@ -58,7 +58,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
-        // player.GetComponent<AudioSource>().Play();
+        AudioListener.pause = false;
     }
 
     /// <summary>
