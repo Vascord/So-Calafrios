@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
             // When player stops.
             if(firstTimeStoping)
             {
-                // moveSound.GetComponent<AudioSource>().Stop();
+                moveSound.GetComponent<AudioSource>().Stop();
                 flashlight.SetBool("Walking", false);
                 firstTimeStoping = false;
                 firstTimeWalking = true;
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             // When player is moving.
             if(firstTimeWalking)
             {
-                // moveSound.GetComponent<AudioSource>().Play();
+                moveSound.GetComponent<AudioSource>().Play();
                 flashlight.SetBool("Walking", true);
                 firstTimeStoping = true;
                 firstTimeWalking = false;

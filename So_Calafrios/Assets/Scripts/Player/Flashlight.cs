@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class Flashlight : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private Light lightFlashlight;
     [SerializeField] private float lightOnIntensity;
     [SerializeField] private float lightTimeMax;
+    [SerializeField] private TextMeshProUGUI lightPourcentage;
     private float lightTime;
 
     void Start()
@@ -49,6 +51,8 @@ public class Flashlight : MonoBehaviour
             {
                 lightTime ++;
             }
+
+            lightPourcentage.text = $"{lightTime}%";
 
             yield return new WaitForSeconds(1f);
         }
