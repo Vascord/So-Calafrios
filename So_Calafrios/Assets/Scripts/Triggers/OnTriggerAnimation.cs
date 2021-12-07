@@ -11,7 +11,14 @@ public class OnTriggerAnimation : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            animationObject.SetTrigger("Activate");
+            if(animationObject.GetBool("Activate"))
+            {
+                animationObject.SetBool("Activate", false);
+            }
+            else
+            {
+                animationObject.SetBool("Activate", true);
+            }
             Destroy(gameObject);
         }
     }

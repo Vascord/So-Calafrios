@@ -27,16 +27,6 @@ public class Flashlight : MonoBehaviour
             lightFlashlight.intensity =
                 (lightFlashlight.intensity == lightOnIntensity) ? 0 : lightOnIntensity;
         }
-
-        if(lightTime <= 0)
-        {
-            lightTime = 0;
-            lightFlashlight.intensity = 0;
-        }
-        else if(lightTime > 100)
-        {
-            lightTime = 100;
-        }
     }
 
     IEnumerator FlashlightBattery()
@@ -50,6 +40,16 @@ public class Flashlight : MonoBehaviour
             else if(lightTime < lightTimeMax)
             {
                 lightTime ++;
+            }
+
+            if(lightTime <= 0)
+            {
+                lightTime = 0;
+                lightFlashlight.intensity = 0;
+            }
+            else if(lightTime > 100)
+            {
+                lightTime = 100;
             }
 
             lightPourcentage.text = $"{lightTime}%";
