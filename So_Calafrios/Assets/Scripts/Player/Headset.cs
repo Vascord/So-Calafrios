@@ -3,7 +3,7 @@ using TMPro;
 
 public class Headset : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textHeadset;
+    [SerializeField] private GameObject headset;
     [SerializeField] private Transform invisibleObject;
 
     /// <summary>
@@ -13,8 +13,8 @@ public class Headset : MonoBehaviour
     {
         if(Input.GetButtonDown("HeadsetToggle"))
         {
-            textHeadset.enabled =
-                (textHeadset.enabled) ? false : true;
+            headset.active =
+                (headset.active) ? false : true;
             
             for(int i = 0; i < invisibleObject.childCount; i++)
             {

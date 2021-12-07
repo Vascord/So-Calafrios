@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 /// <summary>
 /// Class that manages the canvas of the player.
@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CanvasManager : MonoBehaviour
 {
     [SerializeField] private GameObject interactionPanel = default;
-    [SerializeField] private Text interactionText = default;
+    [SerializeField] private TextMeshProUGUI interactionText = default;
 
     /// <summary>
     /// Private method called before the first frame.
