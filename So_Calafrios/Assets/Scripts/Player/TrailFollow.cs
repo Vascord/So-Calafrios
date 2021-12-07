@@ -9,6 +9,13 @@ public class TrailFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       transform.position = objectToFollow.position;
+        if(objectToFollow == null)
+        {
+           Destroy(gameObject);
+        }
+        else
+        {
+            transform.position = objectToFollow.position;
+        }
     }
 }
