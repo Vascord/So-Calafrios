@@ -1,5 +1,4 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Class that permits the movement of the camera to be locked to the mouse
@@ -41,6 +40,8 @@ public class MouseLook : MonoBehaviour
         // Rotates player body with the X camera axis.
         playerBody.Rotate(Vector3.up * mouseX);
     }
+
+    // This code for mouse sensibility option for later on development
 
     // /// <summary>
     // /// Public method which puts the slider value as the mouse sensibility.

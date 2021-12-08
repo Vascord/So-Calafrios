@@ -12,7 +12,6 @@ public class Interactive : MonoBehaviour
         INDIRECT };
     public InteractiveType type;
     public string requirementText;
-    public Texture icon;
     public Interactive[] requirements;
     [SerializeField] private bool isActive = default;
     [SerializeField] private bool deactivationLeader = false;

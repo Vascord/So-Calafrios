@@ -52,7 +52,7 @@ public class PauseMenu : MonoBehaviour
     /// <summary>
     /// Public method which resume the game and locks the mouse movement.
     /// </summary>
-    public void Resume()
+    private void Resume()
     {
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
@@ -64,17 +64,18 @@ public class PauseMenu : MonoBehaviour
     /// <summary>
     /// Public method to returns to the menu scene.
     /// </summary>
-    public void LoadMenu()
+    private void LoadMenu()
     {
         Time.timeScale = 1f;
         gameIsPaused = false;
+        AudioListener.pause = false;
         SceneManager.LoadScene("Menu");
     }
 
     /// <summary>
     /// Public method to quit the game.
     /// </summary>
-    public void QuitGame()
+    private void QuitGame()
     {
         Application.Quit();
     }

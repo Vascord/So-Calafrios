@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class OnHitKill : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /// <summary>
+    /// Private method called upon colliding with an object.
+    /// </summary>
     private void OnTriggerEnter(Collider other)
     {
+        // If it hits the player, it "dies" and return to menu.
         if(other.gameObject.CompareTag("Player"))
         {
             Cursor.lockState = CursorLockMode.None;

@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
     /// <summary>
     /// Public method that loads the next scene in the build settings order.
     /// </summary>
-    public void PlayGame ()
+    private void PlayGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     /// <summary>
     /// Public method which leaves the application, does not work on the editor.
     /// </summary>
-    public void QuitGame()
+    private void QuitGame()
     {
         Application.Quit();
     }

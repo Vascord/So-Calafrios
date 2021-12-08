@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TrailFollow : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
+    private void Update()
     {
+        // Trail follow enemy. Destroyed if there's no more enemy.
         if(objectToFollow == null)
         {
            Destroy(gameObject);

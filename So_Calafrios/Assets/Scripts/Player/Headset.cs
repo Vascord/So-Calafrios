@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class Headset : MonoBehaviour
 {
@@ -9,13 +8,15 @@ public class Headset : MonoBehaviour
     /// <summary>
     /// Private method called every frame.
     /// </summary>
-    void Update()
+    private void Update()
     {
+        // Sees if the player activates/desactivates the Headset.
         if(Input.GetButtonDown("HeadsetToggle"))
         {
             headset.active =
                 (headset.active) ? false : true;
             
+            // Activates/desactivates invisible objects.
             for(int i = 0; i < invisibleObject.childCount; i++)
             {
                 if(invisibleObject.GetChild(i).gameObject.activeSelf)
