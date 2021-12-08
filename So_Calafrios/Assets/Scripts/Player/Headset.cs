@@ -6,6 +6,18 @@ public class Headset : MonoBehaviour
     [SerializeField] private Transform invisibleObject;
 
     /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
+    private void Start()
+    {
+        // Desactivates invisible objects.
+        for(int i = 0; i < invisibleObject.childCount; i++)
+        {
+            invisibleObject.GetChild(i).gameObject.SetActive(false);
+        }
+    }
+
+    /// <summary>
     /// Private method called every frame.
     /// </summary>
     private void Update()
