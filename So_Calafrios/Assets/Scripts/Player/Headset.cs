@@ -3,6 +3,7 @@ using UnityEngine;
 public class Headset : MonoBehaviour
 {
     [SerializeField] private GameObject headset;
+    [SerializeField] private Light flashlight;
     [SerializeField] private Transform invisibleObject;
 
     /// <summary>
@@ -25,8 +26,12 @@ public class Headset : MonoBehaviour
         // Sees if the player activates/desactivates the Headset.
         if(Input.GetButtonDown("HeadsetToggle"))
         {
-            headset.active =
-                (headset.active) ? false : true;
+            headset.active = (headset.active) ? false : true;
+
+            if(flashlight.intensity != 0)
+            {
+                flashlight.intensity = 0;
+            }
             
             // Activates/desactivates invisible objects.
             for(int i = 0; i < invisibleObject.childCount; i++)
