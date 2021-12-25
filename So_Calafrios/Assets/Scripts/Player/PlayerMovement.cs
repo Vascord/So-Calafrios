@@ -15,7 +15,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource walkSound = default;
     [SerializeField] private AudioSource runSound = default;
     [SerializeField] private Animator flashlight = default;
-    private float x, z, walkingSpeed, stamina;
+    [SerializeField] private float runStamina = default;
+    [SerializeField] private float refreshTime = default;
+    [SerializeField] private float maxTiredTime = default;
+    [SerializeField] private float tiredGain = default;
+    private float x, z, walkingSpeed, stamina, period, tired;
     private bool firstTimeStoping, firstTimeWalking, startRun, stopRun;
 
     /// <summary>
@@ -24,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         stamina = maxStamina;
-        StartCoroutine(RunStamina());
         firstTimeStoping = false;
         firstTimeWalking = true;
         walkingSpeed = speed;
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         // Get the input for the movement.
         x = playerInput.movementX;
         z = playerInput.movementZ;
+        Stamina();
     }
 
     /// <summary>
@@ -56,19 +60,28 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Private method called every frame.
     /// </summary>
-    private IEnumerator RunStamina()
+    private void Stamina()
     {
         // This is for the battery of the flashlight.
-        for(;;)
+        if (period > refreshTime)
         {
             if(speed != walkingSpeed && (Input.GetButton("Horizontal") ||
                 Input.GetButton("Vertical")))
             {
-                stamina -= 0.1f;
+                stamina -= runStamina;
+                tired = 0f;
             }
             else
             {
-                stamina += 0.05f;
+                if(tired < maxTiredTime)
+                {
+                    tired += tiredGain;
+                }
+                else
+                {
+                    tired = maxTiredTime;
+                    stamina += runStamina*5;
+                }
             }
 
             // Minimum stamina.
@@ -84,9 +97,10 @@ public class PlayerMovement : MonoBehaviour
 
             // Puts on the interface.
             staminaPourcentage.text = $"STM:{stamina:n1}";
-
-            yield return new WaitForSeconds(0.1f);
+            period = 0;
         }
+
+        period += Time.deltaTime;
     }
 
     /// <summary>

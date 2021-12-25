@@ -4401,6 +4401,10 @@ MonoBehaviour:
   walkSound: {fileID: 1729600438}
   runSound: {fileID: 34046736}
   flashlight: {fileID: 857804214}
+  runStamina: 0.1
+  refreshTime: 0.1
+  maxTiredTime: 3
+  tiredGain: 0.1
 --- !u!143 &1221674617
 CharacterController:
   m_ObjectHideFlags: 0
