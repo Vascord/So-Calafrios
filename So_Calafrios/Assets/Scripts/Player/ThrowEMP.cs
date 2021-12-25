@@ -17,27 +17,19 @@ public class ThrowEMP : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called every frame.
+    /// Private method to instantiate and throw the EMP forward.
     /// </summary>
-    private void Update()
+    public void ThrowGrenade()
     {
-        // Sees if player wants to throw EMPs and checks if he has.
-        if(Input.GetButtonDown("ThrowEMP") && empNumber != 0)
+        if(empNumber != 0)
         {
-            ThrowGrenade();
+            GameObject emp = Instantiate(empGrenade,
+                mainCamera.transform.position, transform.rotation);
+            Rigidbody rb = emp.GetComponent<Rigidbody>();
+            rb.AddForce(mainCamera.transform.forward * 1500);
+
             empNumber--;
             empNumberText.text = $"EMPs:{empNumber}";
         }
-    }
-
-    /// <summary>
-    /// Private method to instantiate and throw the EMP forward.
-    /// </summary>
-    private void ThrowGrenade()
-    {
-        GameObject emp = Instantiate(empGrenade, mainCamera.transform.position,
-            transform.rotation);
-        Rigidbody rb = emp.GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * 1500);
     }
 }

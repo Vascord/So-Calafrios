@@ -29,7 +29,6 @@ public class PlayerInteraction : MonoBehaviour
     private void Update()
     {
         CheckForInteractive();
-        CheckForInteraction();
     }
 
     /// <summary>
@@ -112,27 +111,6 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method that checks for the interaction with the object.
-    /// </summary>
-    private void CheckForInteraction()
-    {
-        if (Input.GetMouseButtonDown(0) && _currentInteractive != null)
-        {
-            // Sees if it's a pickable item.
-            if (_currentInteractive.type == 
-                Interactive.InteractiveType.PICKABLE)
-            {
-                PickCurrentInteractive();
-            }
-            // Sees if it's just to interact.
-            else if (_requirementsInInventory)
-            {
-                InteractWithCurrentInteractive();
-            }
-        }
-    }
-
-    /// <summary>
     /// Private method to pick an object to his inventory.
     /// </summary>
     private void PickCurrentInteractive()
@@ -188,5 +166,26 @@ public class PlayerInteraction : MonoBehaviour
     private bool IsInInventory(Interactive item)
     {
         return _inventory.Contains(item);
+    }
+
+    /// <summary>
+    /// Public method that checks for the interaction with the object.
+    /// </summary>
+    public void CheckForInteraction()
+    {
+        if (_currentInteractive != null)
+        {
+            // Sees if it's a pickable item.
+            if (_currentInteractive.type == 
+                Interactive.InteractiveType.PICKABLE)
+            {
+                PickCurrentInteractive();
+            }
+            // Sees if it's just to interact.
+            else if (_requirementsInInventory)
+            {
+                InteractWithCurrentInteractive();
+            }
+        }
     }
 }

@@ -19,31 +19,27 @@ public class Headset : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called every frame.
+    /// Public method to activates/desactivates the Headset.
     /// </summary>
-    private void Update()
+    public void HeadsetToggle()
     {
-        // Sees if the player activates/desactivates the Headset.
-        if(Input.GetButtonDown("HeadsetToggle"))
-        {
-            headset.active = (headset.active) ? false : true;
+        headset.active = (headset.active) ? false : true;
 
-            if(flashlight.intensity != 0)
+        if(flashlight.intensity != 0)
+        {
+            flashlight.intensity = 0;
+        }
+        
+        // Activates/desactivates invisible objects.
+        for(int i = 0; i < invisibleObject.childCount; i++)
+        {
+            if(invisibleObject.GetChild(i).gameObject.activeSelf)
             {
-                flashlight.intensity = 0;
+                invisibleObject.GetChild(i).gameObject.SetActive(false);
             }
-            
-            // Activates/desactivates invisible objects.
-            for(int i = 0; i < invisibleObject.childCount; i++)
+            else
             {
-                if(invisibleObject.GetChild(i).gameObject.activeSelf)
-                {
-                    invisibleObject.GetChild(i).gameObject.SetActive(false);
-                }
-                else
-                {
-                    invisibleObject.GetChild(i).gameObject.SetActive(true);
-                }
+                invisibleObject.GetChild(i).gameObject.SetActive(true);
             }
         }
     }

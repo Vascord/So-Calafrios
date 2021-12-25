@@ -13,30 +13,6 @@ public class PauseMenu : MonoBehaviour
     // [SerializeField] private GameObject settings = default;
 
     /// <summary>
-    /// Private method called every frame.
-    /// </summary>
-    private void Update()
-    {
-        // Gets the button escape to pause or resume the game
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (!gameIsPaused)
-            {
-                Pause();
-            }
-            else if(gameIsPaused /*&& settings.activeSelf*/)
-            {
-                // settings.SetActive(false);
-                pauseMenuUI.SetActive(true);
-            }
-            else
-            {
-                Resume();
-            }
-        }
-    }
-
-    /// <summary>
     /// Private method which stops the game and permits the free
     /// movement of the mouse.
     /// </summary>
@@ -73,10 +49,30 @@ public class PauseMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// Public method to quit the game.
+    /// Private method to quit the game.
     /// </summary>
     private void QuitGame()
     {
         Application.Quit();
+    }
+
+    /// <summary>
+    /// Public method in reaction to pressing the Escape button.
+    /// </summary>
+    public void PauseKey()
+    {
+        if (!gameIsPaused)
+        {
+            Pause();
+        }
+        else if(gameIsPaused /*&& settings.activeSelf*/)
+        {
+            // settings.SetActive(false);
+            pauseMenuUI.SetActive(true);
+        }
+        else
+        {
+            Resume();
+        }
     }
 }

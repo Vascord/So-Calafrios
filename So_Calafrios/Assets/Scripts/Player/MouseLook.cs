@@ -6,8 +6,9 @@
 /// </summary>
 public class MouseLook : MonoBehaviour
 {
-    [SerializeField] private float mouseSensitivity = default;
+    [SerializeField] private PlayerInput playerInput = default;
     [SerializeField] private Transform playerBody = default;
+    [SerializeField] private float mouseSensitivity = default;
     // [SerializeField] private Slider slider = default;
     private float xRotation = 0f;
 
@@ -16,7 +17,7 @@ public class MouseLook : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        // Lock cursor in game window (press ESC to see cursor).
+        // Lock cursor in game window.
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -26,10 +27,8 @@ public class MouseLook : MonoBehaviour
     private void Update()
     {
         // Gets X and Y angle axis.
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity *
-            Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity *
-            Time.deltaTime;
+        float mouseY = playerInput.mouseY * mouseSensitivity * Time.deltaTime;
+        float mouseX = playerInput.mouseX * mouseSensitivity * Time.deltaTime;
 
         /* Rotates player vision in Y axis and limits the rotation in 80 and 
         -80 degrees. */

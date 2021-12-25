@@ -8,15 +8,15 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private float lightOnIntensity;
 
     /// <summary>
-    /// Private method called every frame.
+    /// Private method to activate/desactivate the light.
     /// </summary>
-    private void Update()
+    public void ToggleLight()
     {
-        // See if player activates/desactivates the light.
-        if(Input.GetButtonDown("LightToggle") && !(headset.active))
+        if(!(headset.active))
         {
-            lightFlashlight.intensity =
-                (lightFlashlight.intensity == lightOnIntensity) ? 0 : lightOnIntensity;
+            lightFlashlight.intensity = 
+                (lightFlashlight.intensity == lightOnIntensity) ? 0 : 
+                lightOnIntensity;
         }
     }
 }
