@@ -126,8 +126,20 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     public void Walk(bool startRun, bool stopRun)
     {
+
+        // Starts to walk. 
+        // Activates sounds and flashlight movement.
+        if(firstTimeWalking)
+        {
+            if(runSound.isPlaying) {runSound.Stop();}
+            walkSound.Play();
+            flashlight.SetBool("Walking", true);
+
+            firstTimeStoping = true;
+            firstTimeWalking = false;
+        }
         // Stop running, no run sound, and is ready to activate the walk. 
-        if(stopRun || stamina <= 0f)
+        else if((stopRun || stamina <= 0f) && speed != walkingSpeed)
         {
             if(runSound.isPlaying) {runSound.Stop();}
             flashlight.SetBool("Walking", false);
@@ -136,7 +148,7 @@ public class PlayerMovement : MonoBehaviour
         }
         // Starts running, stopping walk sound if activated and starts run
         // sound, and flashlight movement if not activated.
-        else if(startRun)
+        else if(startRun && stamina > 0f)
         {
             if(walkSound.isPlaying) {walkSound.Stop();}
             speed = walkingSpeed * 1.5f;
@@ -144,17 +156,6 @@ public class PlayerMovement : MonoBehaviour
             flashlight.SetBool("Walking", true);
 
             startRun = false;
-            firstTimeStoping = true;
-            firstTimeWalking = false;
-        }
-
-        // Starts to walk. 
-        // Activates sounds and flashlight movement.
-        if(firstTimeWalking)
-        {
-            walkSound.Play();
-            flashlight.SetBool("Walking", true);
-
             firstTimeStoping = true;
             firstTimeWalking = false;
         }
