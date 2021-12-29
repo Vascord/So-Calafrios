@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class OnHitKill : MonoBehaviour
 {
+    [SerializeField] private Animator deathScene;
+
     /// <summary>
     /// Private method called upon colliding with an object.
     /// </summary>
@@ -13,8 +15,7 @@ public class OnHitKill : MonoBehaviour
         // If it hits the player, it "dies" and return to menu.
         if(other.gameObject.CompareTag("Player"))
         {
-            Cursor.lockState = CursorLockMode.None;
-            SceneManager.LoadScene("Menu");
+            deathScene.SetTrigger("Dead");
         }
     }
 }
