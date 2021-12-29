@@ -7,8 +7,8 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     [SerializeField] private CanvasManager canvasManager = default;
+    [SerializeField] private Transform cameraTransform = default;
     private const float MAX_INTERACTION_DISTANCE = 3f;
-    private Transform _cameraTransform;
     private Interactive _currentInteractive;
     private bool _requirementsInInventory;
     private List<Interactive> _inventory;
@@ -18,7 +18,6 @@ public class PlayerInteraction : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        _cameraTransform            = GetComponentInChildren<Camera>().transform;
         _requirementsInInventory    = false;
         _inventory                  = new List<Interactive>();
     }
@@ -37,8 +36,8 @@ public class PlayerInteraction : MonoBehaviour
     private void CheckForInteractive()
     {
         // If the raycast detects an object.
-        if (Physics.Raycast(_cameraTransform.position,
-            _cameraTransform.forward,
+        if (Physics.Raycast(cameraTransform.position,
+            cameraTransform.forward,
             out RaycastHit hitInfo,
             MAX_INTERACTION_DISTANCE))
         {

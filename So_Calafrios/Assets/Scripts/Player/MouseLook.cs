@@ -8,8 +8,10 @@ public class MouseLook : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput = default;
     [SerializeField] private Transform playerBody = default;
+    [SerializeField] private Transform playerHead = default;
     [SerializeField] private float mouseSensitivity = default;
     // [SerializeField] private Slider slider = default;
+    private float yRotation = 0f;
     private float xRotation = 0f;
 
     /// <summary>
@@ -32,12 +34,18 @@ public class MouseLook : MonoBehaviour
 
         /* Rotates player vision in Y axis and limits the rotation in 80 and 
         -80 degrees. */
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -70f, 80f);
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        yRotation -= mouseY;
+        yRotation = Mathf.Clamp(yRotation, -70f, 80f);
+        xRotation += mouseX;
+        transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
 
         // Rotates player body with the X camera axis.
-        playerBody.Rotate(Vector3.up * mouseX);
+        playerBody.localRotation = Quaternion.Euler(0, xRotation,0);
+    }
+
+    private void LateUpdate()
+    {
+        transform.position = playerHead.position;
     }
 
     // This code for mouse sensibility option for later on development
