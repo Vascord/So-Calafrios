@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 /// <summary>
 /// Class which interact with the buttons pressed by the player in
@@ -7,12 +8,18 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject fadeCanvas;
+    [SerializeField] private CanvasGroup image;
+    [SerializeField] private float transitionSpeed;
+    [SerializeField] private int tutorialSceneNumber;
+
     /// <summary>
     /// Public method that loads the next scene in the build settings order.
     /// </summary>
     private void PlayGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        fadeCanvas.SetActive(true);
+        StartCoroutine(Transition(tutorialSceneNumber));
     }
 
     /// <summary>
@@ -21,5 +28,23 @@ public class MainMenu : MonoBehaviour
     private void QuitGame()
     {
         Application.Quit();
+    }
+
+    private IEnumerator Transition(int sceneNumber)
+    {
+        // This is for the battery of the flashlight.
+        while(image.alpha != 1f)
+        {
+            image.alpha += transitionSpeed;
+
+            if(image.alpha > 1f)
+            {
+                image.alpha = 1f;
+            }
+
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        SceneManager.LoadScene(sceneNumber);
     }
 }
