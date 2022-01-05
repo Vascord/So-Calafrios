@@ -19,8 +19,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float refreshTime = default;
     [SerializeField] private float maxTiredTime = default;
     [SerializeField] private float tiredGain = default;
+    [SerializeField] private float runMultiplier = default;
+    [SerializeField] private float staminaMultiplier = default;
     private float x, z, walkingSpeed, stamina, period, tired;
-    private bool firstTimeStoping, firstTimeWalking, startRun, stopRun;
+    private bool firstTimeStoping, firstTimeWalking;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -31,8 +33,6 @@ public class PlayerMovement : MonoBehaviour
         firstTimeStoping = false;
         firstTimeWalking = true;
         walkingSpeed = speed;
-        startRun = false;
-        stopRun = false;
     }
     
     /// <summary>
@@ -80,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
                 else
                 {
                     tired = maxTiredTime;
-                    stamina += runStamina*5;
+                    stamina += runStamina*staminaMultiplier;
                 }
             }
 
@@ -151,11 +151,10 @@ public class PlayerMovement : MonoBehaviour
         else if(startRun && stamina > 0f)
         {
             if(walkSound.isPlaying) {walkSound.Stop();}
-            speed = walkingSpeed * 1.5f;
+            speed = walkingSpeed * runMultiplier;
             if(!runSound.isPlaying) {runSound.Play();}
             flashlight.SetBool("Walking", true);
 
-            startRun = false;
             firstTimeStoping = true;
             firstTimeWalking = false;
         }

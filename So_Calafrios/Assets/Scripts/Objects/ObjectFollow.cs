@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TrailFollow : MonoBehaviour
+public class ObjectFollow : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;
 

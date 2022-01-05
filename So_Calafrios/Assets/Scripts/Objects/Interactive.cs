@@ -59,7 +59,8 @@ public class Interactive : MonoBehaviour
     {
         isActive = true;
 
-        if (_animator != null && gameObject.layer != 8)
+        if (_animator != null)
+            Debug.Log("Lmao"); 
             _animator.SetTrigger("Activate");
     }
 

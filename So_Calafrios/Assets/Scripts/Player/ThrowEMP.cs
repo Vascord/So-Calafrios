@@ -7,6 +7,7 @@ public class ThrowEMP : MonoBehaviour
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private TextMeshProUGUI empNumberText;
     [SerializeField] private int empNumber;
+    [SerializeField] private int forceMultiplier;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -26,7 +27,7 @@ public class ThrowEMP : MonoBehaviour
             GameObject emp = Instantiate(empGrenade,
                 mainCamera.transform.position, transform.rotation);
             Rigidbody rb = emp.GetComponent<Rigidbody>();
-            rb.AddForce(mainCamera.transform.forward * 1500);
+            rb.AddForce(mainCamera.transform.forward * forceMultiplier);
 
             empNumber--;
             empNumberText.text = $"EMPs:{empNumber}";

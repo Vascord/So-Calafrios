@@ -10,6 +10,8 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private Transform playerBody = default;
     [SerializeField] private Transform playerHead = default;
     [SerializeField] private float mouseSensitivity = default;
+    [SerializeField] private float minClamp = default;
+    [SerializeField] private float maxClamp = default;
     // [SerializeField] private Slider slider = default;
     private float yRotation = 0f;
     private float xRotation = 0f;
@@ -32,10 +34,10 @@ public class MouseLook : MonoBehaviour
         float mouseY = playerInput.mouseY * mouseSensitivity * Time.deltaTime;
         float mouseX = playerInput.mouseX * mouseSensitivity * Time.deltaTime;
 
-        /* Rotates player vision in Y axis and limits the rotation in 80 and 
-        -80 degrees. */
+        /* Rotates player vision in Y axis and limits the rotation in minClamp 
+        and maxClamp degrees. */
         yRotation -= mouseY;
-        yRotation = Mathf.Clamp(yRotation, -70f, 80f);
+        yRotation = Mathf.Clamp(yRotation, minClamp, maxClamp);
         xRotation += mouseX;
         transform.localRotation = Quaternion.Euler(yRotation, xRotation, 0f);
 

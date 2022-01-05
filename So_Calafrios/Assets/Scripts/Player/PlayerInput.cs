@@ -7,8 +7,29 @@ public class PlayerInput : MonoBehaviour
     public float mouseY { get; private set;}
     public float movementX { get; private set;}
     public float movementZ { get; private set;}
+    private PlayerMovement movement;
+    private Flashlight flashlight;
+    private ThrowEMP eMP;
+    private Headset headset;
+    private PlayerInteraction interaction;
+    private PauseMenu pauseMenu;
 
-    // Update is called once per frame
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
+    void Start()
+    {
+        movement = gameObject.GetComponent<PlayerMovement>();
+        flashlight = gameObject.GetComponent<Flashlight>();
+        eMP = gameObject.GetComponent<ThrowEMP>();
+        headset = gameObject.GetComponent<Headset>();
+        interaction = gameObject.GetComponent<PlayerInteraction>();
+        pauseMenu = pause.GetComponent<PauseMenu>();
+    }
+
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
     void Update()
     {
         // Mouse input.
@@ -21,42 +42,42 @@ public class PlayerInput : MonoBehaviour
 
         if(Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
         {
-            gameObject.GetComponent<PlayerMovement>().Walk(
+            movement.Walk(
                 Input.GetButton("Run"), Input.GetButtonUp("Run"));
         }
         else
         {
-            gameObject.GetComponent<PlayerMovement>().Stop();
+            movement.Stop();
         }
 
         // Input for light.
         if(Input.GetButtonDown("LightToggle"))
         {
-            gameObject.GetComponent<Flashlight>().ToggleLight();
+            flashlight.ToggleLight();
         }
 
         // Input for EMP.
         if(Input.GetButtonDown("ThrowEMP"))
         {
-            gameObject.GetComponent<ThrowEMP>().ThrowGrenade();
+            eMP.ThrowGrenade();
         }
 
         // Input for headset.
         if(Input.GetButtonDown("HeadsetToggle"))
         {
-            gameObject.GetComponent<Headset>().HeadsetToggle();
+            headset.HeadsetToggle();
         }
 
         // Interraction Input
         if(Input.GetMouseButtonDown(0))
         {
-            gameObject.GetComponent<PlayerInteraction>().CheckForInteraction();
+            interaction.CheckForInteraction();
         }
 
         // Pause Button
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            pause.GetComponent<PauseMenu>().PauseKey();
+            pauseMenu.PauseKey();
         }
     }
 }

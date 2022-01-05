@@ -2878,6 +2878,8 @@ MonoBehaviour:
   playerBody: {fileID: 1221674618}
   playerHead: {fileID: 374651911}
   mouseSensitivity: 50
+  minClamp: -70
+  maxClamp: 80
 --- !u!81 &581851758
 AudioListener:
   m_ObjectHideFlags: 0
@@ -5786,10 +5788,12 @@ MonoBehaviour:
   walkSound: {fileID: 223425430}
   runSound: {fileID: 223425431}
   flashlight: {fileID: 857804214}
-  runStamina: 0.1
+  runStamina: 0.05
   refreshTime: 0.1
   maxTiredTime: 3
   tiredGain: 0.1
+  runMultiplier: 1.5
+  staminaMultiplier: 5
 --- !u!143 &1221674617
 CharacterController:
   m_ObjectHideFlags: 0
@@ -5911,6 +5915,7 @@ MonoBehaviour:
   mainCamera: {fileID: 626504750}
   empNumberText: {fileID: 280282882}
   empNumber: 3
+  forceMultiplier: 1500
 --- !u!1 &1248846097
 GameObject:
   m_ObjectHideFlags: 0
@@ -12154,10 +12159,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1769794395}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef3c5cf65a2dd3d4f9087e5919be825f, type: 3}
+  m_Script: {fileID: 11500000, guid: 12839186169066c4f9563cab412004e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   deathScene: {fileID: 409813665}
+  player: {fileID: 1221674624}
 --- !u!1 &1811033183
 GameObject:
   m_ObjectHideFlags: 0
