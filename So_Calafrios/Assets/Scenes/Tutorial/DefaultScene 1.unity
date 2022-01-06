@@ -5898,7 +5898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerInput: {fileID: 1221674624}
   controller: {fileID: 1221674617}
-  speed: 10
+  speed: 3
   maxStamina: 10
   staminaPourcentage: {fileID: 1926562152}
   walkSound: {fileID: 223425430}
