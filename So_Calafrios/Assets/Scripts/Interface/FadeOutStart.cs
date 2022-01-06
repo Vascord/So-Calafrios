@@ -7,12 +7,17 @@ public class FadeOutStart : MonoBehaviour
     [SerializeField] private float transitionSpeed;
     [SerializeField] private float transitionTimeSpeed;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
     void Start()
     {
         StartCoroutine(Transition());
     }
 
+    /// <summary>
+    /// Private Courotina that does the fade out.
+    /// </summary>
     private IEnumerator Transition()
     {
         // This is for the battery of the flashlight.

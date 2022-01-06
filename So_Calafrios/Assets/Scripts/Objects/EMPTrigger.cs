@@ -7,6 +7,7 @@ public class EMPTrigger : MonoBehaviour
     /// <summary>
     /// Private method called upon colliding with an object.
     /// </summary>
+    /// <param name="other">Collider of the collinding object.</param>
     private void OnTriggerEnter(Collider other)
     {
         // If it hits the player or certain objects, it does nothing.

@@ -12,7 +12,7 @@ public class Flashlight : MonoBehaviour
     /// </summary>
     public void ToggleLight()
     {
-        if(!(headset.active))
+        if(!headset.active)
         {
             lightFlashlight.intensity = 
                 (lightFlashlight.intensity == lightOnIntensity) ? 0 : 

@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private int tutorialSceneNumber;
 
     /// <summary>
-    /// Public method that loads the next scene in the build settings order.
+    /// Public method that loads the next scene depending of the scene number.
     /// </summary>
     private void PlayGame ()
     {
@@ -31,6 +31,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
+    /// <summary>
+    /// Private Courotina that does the fade in and loads the scene.
+    /// </summary>
+    /// <param name="sceneNumber">Number of the scene to load.</param>
     private IEnumerator Transition(int sceneNumber)
     {
         // This is for the battery of the flashlight.

@@ -15,11 +15,15 @@ public class Chapter0Enemy : MonoBehaviour
     {
         if(chase)
         {
+            // This will make the entity look at the other object follow it.
             transform.LookAt(objectToFollow.position);
             transform.Translate(0f, 0f, speed*Time.deltaTime);
         }
     }
 
+    /// <summary>
+    /// Public method called to activate the chase of the enemy.
+    /// </summary>
     public void Chase()
     {
         chase = true;

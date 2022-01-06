@@ -147,7 +147,7 @@ public class Interactive : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method that sees if there's anykind of deactivated cicles.
+    /// Private method that sees if there's anykind of deactivated cycles.
     /// </summary>
     private void CheckForDeactivationCicle()
     {

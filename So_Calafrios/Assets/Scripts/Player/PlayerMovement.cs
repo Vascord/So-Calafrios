@@ -124,6 +124,10 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// Public method called when the movement inputs are pressed.
     /// </summary>
+    /// <param name="startRun">Bool that is responsible to know when the
+    /// player starts to run.</param>
+    /// <param name="stopRun">Bool that is responsible to know when the
+    /// player stops to run.</param>
     public void Walk(bool startRun, bool stopRun)
     {
 

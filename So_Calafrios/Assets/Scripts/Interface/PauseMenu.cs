@@ -83,6 +83,10 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private Courotina that does the fade in and loads the scene.
+    /// </summary>
+    /// <param name="sceneNumber">Number of the scene to load.</param>
     private IEnumerator Transition(int sceneNumber)
     {
         // This is for the battery of the flashlight.
