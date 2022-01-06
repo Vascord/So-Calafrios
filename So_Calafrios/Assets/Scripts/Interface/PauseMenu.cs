@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 /// <summary>
 /// Class that interact with the buttons pressed by the player
@@ -7,6 +8,12 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private PlayerInput player;
+    [SerializeField] private GameObject fadeCanvas;
+    [SerializeField] private CanvasGroup image;
+    [SerializeField] private float transitionSpeed;
+    [SerializeField] private float transitionTimeSpeed;
+    [SerializeField] private int menuSceneNumber;
     [SerializeField] private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI = default;
     // [SerializeField] private AudioListener player = default;
@@ -43,9 +50,9 @@ public class PauseMenu : MonoBehaviour
     private void LoadMenu()
     {
         Time.timeScale = 1f;
-        gameIsPaused = false;
-        AudioListener.pause = false;
-        SceneManager.LoadScene("Menu");
+        player.enabled = false;
+        fadeCanvas.SetActive(true);
+        StartCoroutine(Transition(menuSceneNumber));
     }
 
     /// <summary>
@@ -74,5 +81,25 @@ public class PauseMenu : MonoBehaviour
         {
             Resume();
         }
+    }
+
+    private IEnumerator Transition(int sceneNumber)
+    {
+        // This is for the battery of the flashlight.
+        while(image.alpha != 1f)
+        {
+            image.alpha += transitionSpeed;
+
+            if(image.alpha > 1f)
+            {
+                image.alpha = 1f;
+            }
+
+            yield return new WaitForSeconds(transitionTimeSpeed);
+        }
+
+        gameIsPaused = false;
+        AudioListener.pause = false;
+        SceneManager.LoadScene(sceneNumber);
     }
 }

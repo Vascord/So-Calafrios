@@ -135,13 +135,14 @@ GameObject:
   - component: {fileID: 42470968}
   - component: {fileID: 42470967}
   - component: {fileID: 42470966}
+  - component: {fileID: 42470970}
   m_Layer: 5
   m_Name: TransitionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &42470966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,6 +224,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &42470970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42470965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ceca732124d9b84bb9a9a60c4b7cbf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 951352093}
+  transitionSpeed: 0.01
+  transitionTimeSpeed: 0.01
 --- !u!1 &385641638
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +662,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951352089}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -1036,6 +1052,7 @@ MonoBehaviour:
   fadeCanvas: {fileID: 42470965}
   image: {fileID: 951352093}
   transitionSpeed: 0.01
+  transitionTimeSpeed: 0.01
   tutorialSceneNumber: 1
 --- !u!1 &1457163227
 GameObject:

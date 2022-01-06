@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject fadeCanvas;
     [SerializeField] private CanvasGroup image;
     [SerializeField] private float transitionSpeed;
+    [SerializeField] private float transitionTimeSpeed;
     [SerializeField] private int tutorialSceneNumber;
 
     /// <summary>
@@ -42,7 +43,7 @@ public class MainMenu : MonoBehaviour
                 image.alpha = 1f;
             }
 
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(transitionTimeSpeed);
         }
 
         SceneManager.LoadScene(sceneNumber);

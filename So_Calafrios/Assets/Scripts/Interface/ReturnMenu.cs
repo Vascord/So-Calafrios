@@ -10,6 +10,6 @@ public class ReturnMenu : MonoBehaviour
     {
         // Returns to Menu
         Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
