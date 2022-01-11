@@ -16,8 +16,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private int menuSceneNumber;
     [SerializeField] private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI = default;
-    // [SerializeField] private AudioListener player = default;
-    // [SerializeField] private GameObject settings = default;
+    [SerializeField] private GameObject options = default;
 
     /// <summary>
     /// Private method which stops the game and permits the free
@@ -72,9 +71,9 @@ public class PauseMenu : MonoBehaviour
         {
             Pause();
         }
-        else if(gameIsPaused /*&& settings.activeSelf*/)
+        else if(gameIsPaused && options.activeSelf)
         {
-            // settings.SetActive(false);
+            options.SetActive(false);
             pauseMenuUI.SetActive(true);
         }
         else
