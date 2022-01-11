@@ -3,11 +3,10 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Headset : MonoBehaviour
 {
-    [SerializeField] private GameObject headset;
     [SerializeField] private Light flashlight;
     [SerializeField] private Transform invisibleObject;
-    //[SerializeField] private PostProcessVolume volume;
-    //private Vignette vignette = null;
+    [SerializeField] private PostProcessVolume volume;
+    private Vignette vignette = null;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -15,7 +14,7 @@ public class Headset : MonoBehaviour
     private void Start()
     {
         // Fetches the headset
-        //volume.profile.TryGetSettings(out vignette);
+        volume.profile.TryGetSettings(out vignette);
         // Desactivates invisible objects.
         for (int i = 0; i < invisibleObject.childCount; i++)
         {
@@ -28,9 +27,9 @@ public class Headset : MonoBehaviour
     /// </summary>
     public void HeadsetToggle()
     {
-        headset.active = (headset.active) ? false : true;
+        vignette.active = (vignette.active) ? false : true;
 
-        if(flashlight.intensity != 0)
+        if (flashlight.intensity != 0)
         {
             flashlight.intensity = 0;
         }
@@ -41,12 +40,11 @@ public class Headset : MonoBehaviour
             if(invisibleObject.GetChild(i).gameObject.activeSelf)
             {
                 invisibleObject.GetChild(i).gameObject.SetActive(false);
-                //vignette.active = false;
+                
             }
             else
             {
                 invisibleObject.GetChild(i).gameObject.SetActive(true);
-                //vignette.enabled.value = enabled;
             }
         }
     }
