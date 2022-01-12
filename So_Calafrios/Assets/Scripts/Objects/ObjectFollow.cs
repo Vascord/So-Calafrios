@@ -8,15 +8,7 @@ public class ObjectFollow : MonoBehaviour
     /// Private method called every frame.
     /// </summary>
     private void Update()
-    {
-        // Trail follow enemy. Destroyed if there's no more enemy.
-        if(objectToFollow == null)
-        {
-           Destroy(gameObject);
-        }
-        else
-        {
-            transform.position = objectToFollow.position;
-        }
+    { 
+        transform.position = objectToFollow.position;
     }
 }
