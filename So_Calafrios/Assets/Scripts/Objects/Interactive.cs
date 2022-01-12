@@ -77,6 +77,12 @@ public class Interactive : MonoBehaviour
         if(!isActive)
         {
             ProcessDeactivationChain();
+
+            if (type == InteractiveType.INTERACT_ONCE || 
+                type == InteractiveType.PICKABLE)
+            {
+                Destroy(this);
+            }
         }
         // If it is, then the chain will activate.
         if (isActive)
@@ -88,7 +94,7 @@ public class Interactive : MonoBehaviour
             if (type == InteractiveType.INTERACT_ONCE || 
                 type == InteractiveType.PICKABLE)
             {
-                GetComponent<Collider>().enabled = false;
+                Destroy(this);
             }
             else if (type == InteractiveType.INTERACT_MULTI)
             {

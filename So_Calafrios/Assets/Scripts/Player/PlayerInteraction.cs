@@ -41,7 +41,7 @@ public class PlayerInteraction : MonoBehaviour
             out RaycastHit hitInfo,
             MAX_INTERACTION_DISTANCE))
         {
-            Interactive interactive = 
+            Interactive interactive =
                 hitInfo.transform.GetComponent<Interactive>();
 
             // Sees if it has an interactive script.
