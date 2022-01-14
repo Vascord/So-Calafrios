@@ -24,9 +24,16 @@ public class DeathScript : MonoBehaviour
 
         foreach(AudioSource audioS in allAudioSources) 
         {
-            audioS.Stop();
+            if(audioS)
+            {
+                audioS.Stop();
+            }
         }
 
+        if(!deathMusic)
+        {
+            deathMusic.enabled = true;
+        }
         deathMusic.Play();
     }
 }
