@@ -9,10 +9,9 @@ public class MouseLook : MonoBehaviour
     [SerializeField] private PlayerInput playerInput = default;
     [SerializeField] private Transform playerBody = default;
     [SerializeField] private Transform playerHead = default;
-    [SerializeField] private float mouseSensitivity = default;
     [SerializeField] private float minClamp = default;
     [SerializeField] private float maxClamp = default;
-    // [SerializeField] private Slider slider = default;
+    public float mouseSensitivity;
     private float yRotation = 0f;
     private float xRotation = 0f;
 

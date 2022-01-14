@@ -7,7 +7,11 @@ using TMPro;
 public class Options : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer = default;
-    [SerializeField] private Slider slider = default;
+    [SerializeField] private MouseLook mouse = default;
+    [SerializeField] private Light sceneLight = default;
+    [SerializeField] private Slider volumeSlider = default;
+    [SerializeField] private Slider mouseSlider = default;
+    [SerializeField] private Slider lightSlider = default;
     [SerializeField] private Toggle toggle = default;
     [SerializeField] private TMP_Dropdown resolutionDropdown = default;
     private Resolution[] resolutions;
@@ -19,8 +23,16 @@ public class Options : MonoBehaviour
         // Adjust the slider to the actual volume of the game.
         float audio;
         audioMixer.GetFloat("volume", out audio);
-        slider.value = audio;
+        volumeSlider.value = audio;
+
         toggle.isOn = Screen.fullScreen;
+
+        if(mouse != null || sceneLight != null)
+        {
+            mouseSlider.value = mouse.mouseSensitivity;
+
+            lightSlider.value = sceneLight.intensity;
+        }
 
         // Adds all the resolutions of the existing ones to the dropdown
         resolutions = Screen.resolutions;
@@ -58,6 +70,16 @@ public class Options : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetMouseSpeed(float value)
+    {
+        mouse.mouseSensitivity = value;
+    }
+
+    public void SetLight(float value)
+    {
+        sceneLight.intensity = value;
     }
 
     public void SetQuality(int qualityIndex)
