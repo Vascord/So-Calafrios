@@ -10,7 +10,7 @@ public class FadeOutStart : MonoBehaviour
     /// <summary>
     /// Private method called before the first frame.
     /// </summary>
-    void Start()
+    private void Start()
     {
         StartCoroutine(Transition());
     }

@@ -24506,8 +24506,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322436b66a4040f40833438465e78445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activableObject: {fileID: 90144005}
-  activationDesactivation: 1
+  musicObjects:
+  - {fileID: 790895675}
+  - {fileID: 76696184}
+  play: 1
 --- !u!1 &1434622935
 GameObject:
   m_ObjectHideFlags: 0
@@ -24993,8 +24995,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 322436b66a4040f40833438465e78445, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activableObject: {fileID: 90144005}
-  activationDesactivation: 0
+  musicObjects:
+  - {fileID: 790895675}
+  - {fileID: 76696184}
+  play: 0
 --- !u!114 &1504237350
 MonoBehaviour:
   m_ObjectHideFlags: 0

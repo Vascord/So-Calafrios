@@ -1,22 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class OnTriggerActivateDesactivate : MonoBehaviour
 {
-    [SerializeField] private GameObject activableObject;
-    [SerializeField] private bool activationDesactivation;
+    [SerializeField] private AudioSource[] musicObjects;
+    [SerializeField] private bool play;
 
     /// <summary>
     /// Private method called upon colliding with an object.
     /// </summary>
+    /// <param name="other">Collider of the collinding object.</param>
     private void OnTriggerEnter(Collider other)
     {
         // Activates animations when player enter.
         if(other.gameObject.CompareTag("Player"))
         {
-            activableObject.SetActive(activationDesactivation);
-            Destroy(gameObject);
+            foreach(AudioSource music in musicObjects)
+            {
+                if(play)
+                {
+                    music.Play();
+                }
+                else
+                {
+                    music.Stop();
+                }
+            }
+
+            Destroy(this);
         }
     }
 }

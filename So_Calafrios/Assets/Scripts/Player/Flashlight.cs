@@ -9,6 +9,9 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private float lightOnIntensity;
     private Vignette vignette = null;
 
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
     private void Start()
     {
         volume.profile.TryGetSettings(out vignette);

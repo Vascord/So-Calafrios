@@ -18,10 +18,13 @@ public class Options : MonoBehaviour
     private Resolution[] resolutions;
     private int currentresolutionIndex;
 
-
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
     private void Start()
     {
-        // Adjust the slider to the actual volume of the game.
+        // Adjust the sliders/dropdowns/toggles to the actual volume, quality, 
+        // mouse sensitivity, brightness and fullscreen of the game of the game.
         float audio;
         audioMixer.GetFloat("volume", out audio);
         volumeSlider.value = audio;
@@ -36,6 +39,8 @@ public class Options : MonoBehaviour
 
             lightSlider.value = sceneLight.intensity;
         }
+
+        toggle.isOn = Screen.fullScreen;
 
         // Adds all the resolutions of the existing ones to the dropdown
         resolutions = Screen.resolutions;
@@ -57,38 +62,69 @@ public class Options : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
-    public void SetResolution(int resolutionIndex)
+    /// <summary>
+    /// Private method called when the player changes the resolution of the
+    /// game.
+    /// </summary>
+    /// <param name="resolutionIndex">Input of the resolution's associated 
+    /// number in the list.</param>
+    private void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, 
             Screen.fullScreen);
     }
 
-    public void SetVolume(float volume)
+    /// <summary>
+    /// Private method called when the player changes the volume of the
+    /// game and saves it in player prefs.
+    /// </summary>
+    /// <param name="volume">Input of the desired volume.</param>
+    private void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
         PlayerPrefs.SetFloat("volume", volume);
     }
 
-    public void SetMouseSpeed(float value)
+    /// <summary>
+    /// Private method called when the player changes the mouse sensitivity of 
+    /// the game and saves it in player prefs.
+    /// </summary>
+    /// <param name="value">Input of the desired mouse sensitivity.</param>
+    private void SetMouseSpeed(float value)
     {
         mouse.mouseSensitivity = value;
         PlayerPrefs.SetFloat("mouse sensitivity", value);
     }
 
-    public void SetLight(float value)
+    /// <summary>
+    /// Private method called when the player changes the brightness of the
+    /// game and saves it in player prefs.
+    /// </summary>
+    /// <param name="value">Input of the desired brightness.</param>
+    private void SetLight(float value)
     {
         sceneLight.intensity = value;
         PlayerPrefs.SetFloat("brightness", value);
     }
 
-    public void SetQuality(int qualityIndex)
+    /// <summary>
+    /// Private method called when the player changes the quality of the
+    /// game and saves it in player prefs.
+    /// </summary>
+    /// <param name="qualityIndex">Input of the quality's associated 
+    /// number in the list.</param>
+    private void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         PlayerPrefs.SetInt("quality", qualityIndex);
     }
 
-    public void SetFullscreen()
+    /// <summary>
+    /// Private method called when the player wants fullscreen or not 
+    /// and saves it in player prefs.
+    /// </summary>
+    private void SetFullscreen()
     {
         Screen.fullScreen = toggle.isOn;
         PlayerPrefs.SetString("screen", toggle.isOn.ToString());

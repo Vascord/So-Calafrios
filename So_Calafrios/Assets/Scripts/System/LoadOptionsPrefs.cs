@@ -10,8 +10,10 @@ public class LoadOptionsPrefs : MonoBehaviour
     [SerializeField] private Light sceneLight = default;
 
 
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
+    private void Start()
     {
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {

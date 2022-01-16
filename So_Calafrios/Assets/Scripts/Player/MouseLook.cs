@@ -44,6 +44,10 @@ public class MouseLook : MonoBehaviour
         playerBody.localRotation = Quaternion.Euler(0, xRotation,0);
     }
 
+    /// <summary>
+    /// Private method called at the end of every frame.
+    /// </summary>
+
     private void LateUpdate()
     {
         transform.position = playerHead.position;
