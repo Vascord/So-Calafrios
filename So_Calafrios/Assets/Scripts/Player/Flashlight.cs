@@ -8,6 +8,7 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private PostProcessVolume volume;
     [SerializeField] private float lightOnIntensity;
     private Vignette vignette = null;
+    private bool lightsOut;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -22,11 +23,17 @@ public class Flashlight : MonoBehaviour
     /// </summary>
     public void ToggleLight()
     {
-        if(!vignette.active)
+        if(!vignette.active && !lightsOut)
         {
             lightFlashlight.intensity = 
                 (lightFlashlight.intensity == lightOnIntensity) ? 0 : 
                 lightOnIntensity;
         }
+    }
+
+    public void CheckLights(bool check)
+    {
+        lightsOut = check;
+        lightFlashlight.intensity = (check) ? 0 : lightOnIntensity;
     }
 }

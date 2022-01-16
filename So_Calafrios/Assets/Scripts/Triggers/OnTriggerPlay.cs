@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OnTriggerActivateDesactivate : MonoBehaviour
+public class OnTriggerPlay : MonoBehaviour
 {
     [SerializeField] private AudioSource[] musicObjects;
     [SerializeField] private bool play;

@@ -3,6 +3,9 @@ using UnityEngine;
 public class OnTriggerAnimation : MonoBehaviour
 {
     [SerializeField] private Animator animationObject;
+    [SerializeField] private bool lightModifier;
+    [SerializeField] private bool lightOut;
+    [SerializeField] private Flashlight flashlight;
 
     /// <summary>
     /// Private method called upon colliding with an object.
@@ -21,6 +24,12 @@ public class OnTriggerAnimation : MonoBehaviour
             {
                 animationObject.SetBool("Activate", true);
             }
+
+            if(lightModifier)
+            {
+                flashlight.CheckLights(lightOut);
+            }
+
             Destroy(gameObject);
         }
     }

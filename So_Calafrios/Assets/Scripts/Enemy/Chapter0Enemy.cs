@@ -25,6 +25,6 @@ public class Chapter0Enemy : MonoBehaviour
     public void Chase()
     {
         chase = true;
-        GetComponent<Animator>().enabled = false;
+        if(GetComponent<Animator>()){GetComponent<Animator>().enabled = false;}
     }
 }
