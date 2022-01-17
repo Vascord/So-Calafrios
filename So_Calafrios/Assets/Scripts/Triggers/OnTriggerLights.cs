@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class OnTriggerAppear : MonoBehaviour
+public class OnTriggerLights : MonoBehaviour
 {
-    [SerializeField] private GameObject appearObject;
+    [SerializeField] private bool lightOut;
+    [SerializeField] private Flashlight flashlight;
 
     /// <summary>
     /// Private method called upon colliding with an object.
@@ -13,7 +14,7 @@ public class OnTriggerAppear : MonoBehaviour
         // Activates animations when player enter.
         if(other.gameObject.CompareTag("Player"))
         {
-            appearObject.SetActive(true);
+            flashlight.CheckLights(lightOut);
             Destroy(this);
         }
     }
