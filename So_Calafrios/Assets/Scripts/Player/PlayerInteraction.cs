@@ -125,8 +125,8 @@ public class PlayerInteraction : MonoBehaviour
     {
         for (int i = 0; i < _currentInteractive.requirements.Length; ++i)
         {
-            Interactive currentRequirement = _currentInteractive.requirements[i];
-            currentRequirement.gameObject.SetActive(true);
+            Interactive currentRequirement = 
+                _currentInteractive.requirements[i];
             currentRequirement.Interact();
             RemoveFromInventory(currentRequirement);
         }

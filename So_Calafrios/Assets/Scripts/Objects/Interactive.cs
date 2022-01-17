@@ -38,7 +38,7 @@ public class Interactive : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        if (deactivationLeader == true)
+        if (deactivationLeader)
             CheckForDeactivationCicle();
     }
 
@@ -60,7 +60,6 @@ public class Interactive : MonoBehaviour
         isActive = true;
 
         if (_animator != null)
-            Debug.Log("Lmao"); 
             _animator.SetTrigger("Activate");
     }
 

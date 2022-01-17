@@ -72,7 +72,7 @@ public class Options : MonoBehaviour
     /// </summary>
     /// <param name="resolutionIndex">Input of the resolution's associated 
     /// number in the list.</param>
-    private void SetResolution(int resolutionIndex)
+    public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, 
@@ -84,7 +84,7 @@ public class Options : MonoBehaviour
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="volume">Input of the desired volume.</param>
-    private void SetVolume(float volume)
+    public void SetVolume(float volume)
     {
         audioMixer.SetFloat("volume", volume);
         PlayerPrefs.SetFloat("volume", volume);
@@ -95,7 +95,7 @@ public class Options : MonoBehaviour
     /// the game and saves it in player prefs.
     /// </summary>
     /// <param name="value">Input of the desired mouse sensitivity.</param>
-    private void SetMouseSpeed(float value)
+    public void SetMouseSpeed(float value)
     {
         mouse.mouseSensitivity = value;
         PlayerPrefs.SetFloat("mouse sensitivity", value);
@@ -106,7 +106,7 @@ public class Options : MonoBehaviour
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="value">Input of the desired brightness.</param>
-    private void SetLight(float value)
+    public void SetLight(float value)
     {
         sceneLight.intensity = value;
         PlayerPrefs.SetFloat("brightness", value);
@@ -117,7 +117,7 @@ public class Options : MonoBehaviour
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="value">Input of the desired field of view.</param>
-    private void SetFOV(float value)
+    public void SetFOV(float value)
     {
         cameraObject.fieldOfView = value;
         PlayerPrefs.SetFloat("FOV", value);
@@ -129,7 +129,7 @@ public class Options : MonoBehaviour
     /// </summary>
     /// <param name="qualityIndex">Input of the quality's associated 
     /// number in the list.</param>
-    private void SetQuality(int qualityIndex)
+    public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
         PlayerPrefs.SetInt("quality", qualityIndex);
@@ -139,7 +139,7 @@ public class Options : MonoBehaviour
     /// Private method called when the player wants fullscreen or not 
     /// and saves it in player prefs.
     /// </summary>
-    private void SetFullscreen()
+    public void SetFullscreen()
     {
         Screen.fullScreen = toggle.isOn;
         PlayerPrefs.SetString("screen", toggle.isOn.ToString());
