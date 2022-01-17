@@ -8,7 +8,7 @@ public class LoadOptionsPrefs : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer = default;
     [SerializeField] private MouseLook mouse = default;
     [SerializeField] private Light sceneLight = default;
-
+    [SerializeField] private Camera cameraObject = default;
 
     /// <summary>
     /// Private method called every frame.
@@ -43,6 +43,10 @@ public class LoadOptionsPrefs : MonoBehaviour
             if(PlayerPrefs.GetFloat("brightness") != 0)
             {
                 sceneLight.intensity = PlayerPrefs.GetFloat("brightness");
+            }
+            if(PlayerPrefs.GetFloat("FOV") != 0)
+            {
+                cameraObject.fieldOfView = PlayerPrefs.GetFloat("FOV");
             }
         }
     }

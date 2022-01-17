@@ -9,9 +9,11 @@ public class Options : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer = default;
     [SerializeField] private MouseLook mouse = default;
     [SerializeField] private Light sceneLight = default;
+    [SerializeField] private Camera cameraObject = default;
     [SerializeField] private Slider volumeSlider = default;
     [SerializeField] private Slider mouseSlider = default;
     [SerializeField] private Slider lightSlider = default;
+    [SerializeField] private Slider cameraSlider = default;
     [SerializeField] private Toggle toggle = default;
     [SerializeField] private TMP_Dropdown resolutionDropdown = default;
     [SerializeField] private TMP_Dropdown qualityDropdown = default;
@@ -33,11 +35,13 @@ public class Options : MonoBehaviour
 
         toggle.isOn = Screen.fullScreen;
 
-        if(mouse != null || sceneLight != null)
+        if(mouse != null || sceneLight != null || cameraSlider != null)
         {
             mouseSlider.value = mouse.mouseSensitivity;
 
             lightSlider.value = sceneLight.intensity;
+
+            cameraSlider.value = cameraObject.fieldOfView;
         }
 
         toggle.isOn = Screen.fullScreen;
@@ -109,6 +113,17 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
+    /// Private method called when the player changes the field of view of the
+    /// game and saves it in player prefs.
+    /// </summary>
+    /// <param name="value">Input of the desired field of view.</param>
+    private void SetFOV(float value)
+    {
+        cameraObject.fieldOfView = value;
+        PlayerPrefs.SetFloat("FOV", value);
+    }
+
+    /// <summary>
     /// Private method called when the player changes the quality of the
     /// game and saves it in player prefs.
     /// </summary>
@@ -130,4 +145,3 @@ public class Options : MonoBehaviour
         PlayerPrefs.SetString("screen", toggle.isOn.ToString());
     }
 }
-
