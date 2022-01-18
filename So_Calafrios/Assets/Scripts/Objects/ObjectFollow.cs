@@ -9,6 +9,9 @@ public class ObjectFollow : MonoBehaviour
     /// </summary>
     private void Update()
     { 
-        transform.position = objectToFollow.position;
+        if(objectToFollow != null)
+        {
+            transform.position = objectToFollow.position;
+        }
     }
 }

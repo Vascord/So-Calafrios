@@ -3,10 +3,10 @@ using TMPro;
 
 public class ThrowEMP : MonoBehaviour
 {
+    public int empNumber;
     [SerializeField] private GameObject empGrenade;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private TextMeshProUGUI empNumberText;
-    [SerializeField] private int empNumber;
     [SerializeField] private int forceMultiplier;
 
     /// <summary>
@@ -14,7 +14,7 @@ public class ThrowEMP : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        empNumberText.text = $"EMPs:{empNumber}";
+        UpdateText();
     }
 
     /// <summary>
@@ -30,7 +30,12 @@ public class ThrowEMP : MonoBehaviour
             rb.AddForce(mainCamera.transform.forward * forceMultiplier);
 
             empNumber--;
-            empNumberText.text = $"EMPs:{empNumber}";
+            UpdateText();
         }
+    }
+
+    public void UpdateText()
+    {
+        empNumberText.text = $"EMPs:{empNumber}";
     }
 }

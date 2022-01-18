@@ -1,0 +1,44 @@
+using UnityEngine;
+using TMPro;
+
+public class PlayerCheats : MonoBehaviour
+{
+    [SerializeField] private GameObject cheatText;
+    [SerializeField] private GameObject invincibleText;
+    [SerializeField] private Vector3 begining = default;
+    [SerializeField] private Vector3 afterGate = default;
+    [SerializeField] private ThrowEMP eMPGrenades = default;
+    [SerializeField] private CharacterController character = default;
+    [SerializeField] private PlayerDeath playerDeath;
+
+    public void Cheats(int cheatNumber)
+    {
+        // TP to begining cheat
+        switch(cheatNumber) 
+        {
+            case 0:
+                cheatText.SetActive((cheatText.activeSelf) ? false : true);
+                break;
+            case 1:
+                character.enabled = false;
+                gameObject.transform.position = begining;
+                character.enabled = true;
+                break;
+            case 2:
+                character.enabled = false;
+                gameObject.transform.position = afterGate;
+                character.enabled = true;
+                break;
+            case 3:
+                playerDeath.invincible = (playerDeath.invincible) ? false : 
+                    true;
+                invincibleText.SetActive((invincibleText.activeSelf) ? false : 
+                    true);
+                break;
+            case 4:
+                eMPGrenades.empNumber++;
+                eMPGrenades.UpdateText();
+                break;
+        }
+    }
+}

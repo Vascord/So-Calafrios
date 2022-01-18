@@ -13,6 +13,8 @@ public class PlayerInput : MonoBehaviour
     private Headset headset;
     private PlayerInteraction interaction;
     private PauseMenu pauseMenu;
+    private PlayerCheats cheats;
+    private bool cheatOn;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -25,6 +27,8 @@ public class PlayerInput : MonoBehaviour
         headset = gameObject.GetComponent<Headset>();
         interaction = gameObject.GetComponent<PlayerInteraction>();
         pauseMenu = pause.GetComponent<PauseMenu>();
+        cheats = gameObject.GetComponent<PlayerCheats>();
+        cheatOn = false;
     }
 
     /// <summary>
@@ -78,6 +82,36 @@ public class PlayerInput : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.PauseKey();
+        }
+
+        // Cheats Button
+        if(Input.GetButtonDown("CheatOn"))
+        {
+            cheatOn = (cheatOn) ? false : true;
+            cheats.Cheats(0);
+        }
+
+        // TP to begining cheat
+        if(cheatOn && Input.GetButtonDown("Cheat1"))
+        {
+            cheats.Cheats(1);
+        }
+
+        // TP after the gate
+        if(cheatOn && Input.GetButtonDown("Cheat2"))
+        {
+            cheats.Cheats(2);
+        }
+
+        // Invincible cheat
+        if(cheatOn && Input.GetButtonDown("Cheat3"))
+        {
+            cheats.Cheats(3);
+        }
+
+        if(cheatOn && Input.GetButtonDown("Cheat4"))
+        {
+            cheats.Cheats(4);
         }
     }
 }
