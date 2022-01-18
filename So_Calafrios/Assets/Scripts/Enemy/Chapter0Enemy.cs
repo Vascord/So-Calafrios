@@ -4,7 +4,8 @@ public class Chapter0Enemy : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;
     [SerializeField] private float speed;
-    private bool chase = false;
+    [SerializeField] private GameObject deadLigth;
+    private bool chase;
 
     /// <summary>
     /// Private method called every frame.
@@ -26,5 +27,15 @@ public class Chapter0Enemy : MonoBehaviour
     {
         chase = true;
         if(GetComponent<Animator>()){GetComponent<Animator>().enabled = false;}
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
+
+    public void AppearLight()
+    {
+        Instantiate(deadLigth, transform.position, transform.rotation);
     }
 }

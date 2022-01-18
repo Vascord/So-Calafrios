@@ -14,7 +14,16 @@ public class EMPTrigger : MonoBehaviour
         // If it hits the enemy, destroy the enemy and object.
         else if(other.gameObject.CompareTag("Enemy"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<Chapter0Enemy>().AppearLight();
+            if(other.gameObject.GetComponent<Animator>())
+            {
+                other.gameObject.GetComponent<Animator>().enabled = true;
+                other.gameObject.GetComponent<Animator>().SetTrigger("Death");
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
             Destroy(gameObject);
         }
         // If it hits anything else, it's destroyed.
