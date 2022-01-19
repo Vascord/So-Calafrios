@@ -10,6 +10,7 @@ public class Headset : MonoBehaviour
     [SerializeField] private Transform invisibleObject;
     [SerializeField] private PostProcessVolume volume;
     private Vignette vignette = null;
+    private Grain grain = null;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -18,6 +19,7 @@ public class Headset : MonoBehaviour
     {
         // Fetches the headset
         volume.profile.TryGetSettings(out vignette);
+        volume.profile.TryGetSettings(out grain);
         // Desactivates invisible objects.
         for (int i = 0; i < invisibleObject.childCount; i++)
         {
@@ -31,6 +33,7 @@ public class Headset : MonoBehaviour
     public void HeadsetToggle()
     {
         vignette.active = (vignette.active) ? false : true;
+        grain.active = (grain.active) ? false : true;
 
         if (flashlight.intensity != 0)
         {
