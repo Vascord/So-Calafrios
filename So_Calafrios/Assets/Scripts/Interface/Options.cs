@@ -59,7 +59,7 @@ public class Options : MonoBehaviour
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height +
-            "&" + resolutions[i].refreshRate;
+            resolutions[i].refreshRate + "Hz" ;
             options.Add(option);
 
             currentresolutionIndex = i;
