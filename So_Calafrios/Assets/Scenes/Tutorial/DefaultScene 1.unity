@@ -8349,7 +8349,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &312072269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8439,7 +8439,7 @@ RectTransform:
   m_Children:
   - {fileID: 2037034933}
   m_Father: {fileID: 1248846098}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -10004,9 +10004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67f18ac3f0a7d60449f56954f5a4503b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerInput: {fileID: 1221674624}
   deathMusic: {fileID: 880318369}
-  allAudioSources: []
 --- !u!1 &415968756
 GameObject:
   m_ObjectHideFlags: 0
@@ -31124,8 +31122,8 @@ Transform:
   m_Children:
   - {fileID: 1055389857}
   - {fileID: 260240966}
-  - {fileID: 1621815119}
   - {fileID: 312072273}
+  - {fileID: 1621815119}
   - {fileID: 318625449}
   - {fileID: 205491568}
   - {fileID: 96409679}
@@ -35900,7 +35898,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1621815119
 RectTransform:
@@ -35916,7 +35914,7 @@ RectTransform:
   - {fileID: 1166728876}
   - {fileID: 544236670}
   m_Father: {fileID: 1248846098}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
