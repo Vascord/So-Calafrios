@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which does the behaviors and actions of the specter enemies.
+/// </summary>
 public class Chapter0Enemy : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;
@@ -8,7 +11,7 @@ public class Chapter0Enemy : MonoBehaviour
     private bool chase;
 
     /// <summary>
-    /// Private method called every frame.
+    /// Private method called 60 times per second.
     /// </summary>
     private void FixedUpdate()
     {
@@ -29,11 +32,17 @@ public class Chapter0Enemy : MonoBehaviour
         if(GetComponent<Animator>()){GetComponent<Animator>().enabled = false;}
     }
 
+    /// <summary>
+    /// Public method called to destroy the game object.
+    /// </summary>
     public void Destroy()
     {
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// Public method that instantiates the dead light object.
+    /// </summary>
     public void AppearLight()
     {
         Instantiate(deadLigth, transform.position, transform.rotation);

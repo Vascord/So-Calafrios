@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which activates the death of the player on contact.
+/// </summary>
 public class OnHitKillPlayer : MonoBehaviour
 {
 

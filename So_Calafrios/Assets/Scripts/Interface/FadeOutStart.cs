@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Class which does the fade out when the game object is started.
+/// </summary>
 public class FadeOutStart : MonoBehaviour
 {
     [SerializeField] private CanvasGroup image;

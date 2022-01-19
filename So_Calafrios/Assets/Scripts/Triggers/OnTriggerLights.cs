@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which activates/deactivates the light animations and flashlight when
+/// entering a collider.
+/// </summary>
 public class OnTriggerLights : MonoBehaviour
 {
     [SerializeField] private bool lightOut;

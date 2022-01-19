@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which handle the behavior of the EMP trigger on contact.
+/// </summary>
 public class EMPTrigger : MonoBehaviour
 {
     /// <summary>

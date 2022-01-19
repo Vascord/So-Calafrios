@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which makes an object follow another.
+/// </summary>
 public class ObjectFollow : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;

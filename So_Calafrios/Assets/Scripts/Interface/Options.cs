@@ -4,6 +4,9 @@ using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Class which handle the options of the player.
+/// </summary>
 public class Options : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer = default;

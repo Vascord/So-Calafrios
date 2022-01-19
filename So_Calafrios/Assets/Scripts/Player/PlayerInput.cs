@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which manages the player's inputs.
+/// </summary>
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private GameObject pause = default;
@@ -19,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     /// <summary>
     /// Private method called before the first frame.
     /// </summary>
-    void Start()
+    private void Start()
     {
         movement = gameObject.GetComponent<PlayerMovement>();
         flashlight = gameObject.GetComponent<Flashlight>();
@@ -34,7 +37,7 @@ public class PlayerInput : MonoBehaviour
     /// <summary>
     /// Private method called every frame.
     /// </summary>
-    void Update()
+    private void Update()
     {
         // Mouse input.
         mouseX = Input.GetAxis("Mouse X");
@@ -109,6 +112,7 @@ public class PlayerInput : MonoBehaviour
             cheats.Cheats(3);
         }
 
+        // Additional EMP cheat
         if(cheatOn && Input.GetButtonDown("Cheat4"))
         {
             cheats.Cheats(4);

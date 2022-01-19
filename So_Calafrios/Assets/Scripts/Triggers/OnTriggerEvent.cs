@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+/// <summary>
+/// Class which manages the inserted events when entering a collider.
+/// </summary>
 public class OnTriggerEvent : MonoBehaviour
 {
     [SerializeField] private bool destroyOrNot;

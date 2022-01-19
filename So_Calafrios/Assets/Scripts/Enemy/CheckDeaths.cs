@@ -1,14 +1,18 @@
 using UnityEngine;
-using System.Linq;
 
+/// <summary>
+/// Class which changes the music played when all enemies are destroyed.
+/// </summary>
 public class CheckDeaths : MonoBehaviour
 {
     [SerializeField] private Chapter0Enemy[] enemies;
     [SerializeField] private AudioSource[] musicsStart;
     [SerializeField] private AudioSource[] musicsStop;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
+    private void Update()
     {
         if(CheckAlive())
         {
@@ -26,6 +30,9 @@ public class CheckDeaths : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method that checks if every enemy is alive or not.
+    /// </summary>
     private bool CheckAlive()
     {
         bool check = true;

@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
+/// <summary>
+/// Class which manages the behavior of the flashlight.
+/// </summary>
 public class Flashlight : MonoBehaviour
 {
-
     [SerializeField] private Light lightFlashlight;
     [SerializeField] private PostProcessVolume volume;
     [SerializeField] private float lightOnIntensity;
@@ -19,7 +21,7 @@ public class Flashlight : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method to activate/desactivate the light.
+    /// Public method to activate/desactivate the light.
     /// </summary>
     public void ToggleLight()
     {
@@ -31,9 +33,14 @@ public class Flashlight : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method to activate/desactivate the flashlight when the lights.
+    /// </summary>
+    /// <param name="check"> Says if the flashlight is activable or 
+    /// not.</param>
     public void CheckLights(bool check)
     {
         lightsOut = check;
-        lightFlashlight.intensity = (check) ? 0 : lightOnIntensity;
+        lightFlashlight.intensity = 0;
     }
 }

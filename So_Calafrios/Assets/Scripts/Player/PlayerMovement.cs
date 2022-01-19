@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called 60 per second.
+    /// Private method called 60 times per second.
     /// </summary>
     private void FixedUpdate()
     {

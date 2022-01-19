@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
+/// <summary>
+/// Class which manages the behavior of the headset.
+/// </summary>
 public class Headset : MonoBehaviour
 {
     [SerializeField] private Light flashlight;

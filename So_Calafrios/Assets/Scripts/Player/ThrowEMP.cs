@@ -1,6 +1,9 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class which the throwing and text of the EMP.
+/// </summary>
 public class ThrowEMP : MonoBehaviour
 {
     public int empNumber;

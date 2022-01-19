@@ -1,15 +1,17 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which manage the death of the player.
+/// </summary>
 public class DeathScript : MonoBehaviour
 {
-    [SerializeField] private PlayerInput playerInput = default;
     [SerializeField] private AudioSource deathMusic = default;
-    [SerializeField] private AudioSource[] allAudioSources;
+    private AudioSource[] allAudioSources;
 
     /// <summary>
     /// Private method called when the GameObject is initialized.
     /// </summary>
-    void Awake() 
+    private void Awake() 
     {
         allAudioSources = GameObject.FindObjectsOfType(typeof(AudioSource)) 
             as AudioSource[];
@@ -20,8 +22,6 @@ public class DeathScript : MonoBehaviour
     /// </summary>
     private void DeathScene()
     {
-        playerInput.enabled = false;
-
         foreach(AudioSource audioS in allAudioSources) 
         {
             if(audioS)

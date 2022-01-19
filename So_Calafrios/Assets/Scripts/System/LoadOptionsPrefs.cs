@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 
+/// <summary>
+/// Class which manages the load of the player's options.
+/// </summary>
 public class LoadOptionsPrefs : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer = default;

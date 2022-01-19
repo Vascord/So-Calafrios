@@ -1,6 +1,8 @@
 using UnityEngine;
-using TMPro;
 
+/// <summary>
+/// Class which manages the cheats of the player.
+/// </summary>
 public class PlayerCheats : MonoBehaviour
 {
     [SerializeField] private GameObject cheatText;
@@ -11,6 +13,11 @@ public class PlayerCheats : MonoBehaviour
     [SerializeField] private CharacterController character = default;
     [SerializeField] private PlayerDeath playerDeath;
 
+    /// <summary>
+    /// Public method called when the player presses a cheat button.
+    /// </summary>
+    /// <param name="cheatNumber"> Number that determines which cheat
+    /// will be used.</param>
     public void Cheats(int cheatNumber)
     {
         // TP to begining cheat

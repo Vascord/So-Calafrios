@@ -1,5 +1,9 @@
 using UnityEngine;
 
+/// <summary>
+/// Class which activate the chasing mode of the enemies when entering a
+/// collider.
+/// </summary>
 public class OnTriggerActivateEnemies : MonoBehaviour
 {
     [SerializeField] private Chapter0Enemy[] enemies;
