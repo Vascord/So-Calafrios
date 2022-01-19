@@ -47,8 +47,6 @@ public class Options : MonoBehaviour
             cameraSlider.value = cameraObject.fieldOfView;
         }
 
-        toggle.isOn = Screen.fullScreen;
-
         // Adds all the resolutions of the existing ones to the dropdown
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
