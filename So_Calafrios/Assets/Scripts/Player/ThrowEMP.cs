@@ -39,6 +39,6 @@ public class ThrowEMP : MonoBehaviour
 
     public void UpdateText()
     {
-        empNumberText.text = $"EMPs:{empNumber}";
+        empNumberText.text = $"x{empNumber}";
     }
 }
