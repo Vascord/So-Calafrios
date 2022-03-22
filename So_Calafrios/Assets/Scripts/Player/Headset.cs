@@ -8,18 +8,15 @@ public class Headset : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
     [SerializeField] private Transform invisibleObject;
-    [SerializeField] private PostProcessVolume volume;
-    private Vignette vignette = null;
-    private Grain grain = null;
+    [SerializeField] private PostProcessVolume globalVolume;
+    [SerializeField] private PostProcessVolume headsetVolume;
+
 
     /// <summary>
     /// Private method called before the first frame.
     /// </summary>
     private void Start()
     {
-        // Fetches the headset
-        volume.profile.TryGetSettings(out vignette);
-        volume.profile.TryGetSettings(out grain);
         // Desactivates invisible objects.
         for (int i = 0; i < invisibleObject.childCount; i++)
         {
@@ -32,16 +29,16 @@ public class Headset : MonoBehaviour
     /// </summary>
     public void HeadsetToggle()
     {
-        vignette.active = (vignette.active) ? false : true;
-        grain.active = (grain.active) ? false : true;
+        globalVolume.enabled= globalVolume.enabled ? false : true;
+        headsetVolume.enabled = headsetVolume.enabled ? false : true;
 
         if (flashlight.intensity != 0)
         {
             flashlight.intensity = 0;
         }
-        
+
         // Activates/desactivates invisible objects.
-        for(int i = 0; i < invisibleObject.childCount; i++)
+        for (int i = 0; i < invisibleObject.childCount; i++)
         {
             if(invisibleObject.GetChild(i).gameObject.activeSelf)
             {
