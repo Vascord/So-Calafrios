@@ -10,6 +10,7 @@ public class Headset : MonoBehaviour
     [SerializeField] private Transform invisibleObject;
     [SerializeField] private PostProcessVolume globalVolume;
     [SerializeField] private PostProcessVolume headsetVolume;
+    [SerializeField] private AudioSource soundHeadset;
 
 
     /// <summary>
@@ -36,6 +37,8 @@ public class Headset : MonoBehaviour
         {
             flashlight.intensity = 0;
         }
+
+        soundHeadset.PlayOneShot(soundHeadset.clip);
 
         // Activates/desactivates invisible objects.
         for (int i = 0; i < invisibleObject.childCount; i++)

@@ -9,6 +9,8 @@ public class Flashlight : MonoBehaviour
     [SerializeField] private Light lightFlashlight;
     [SerializeField] private PostProcessVolume globalVolume;
     [SerializeField] private float lightOnIntensity;
+    [SerializeField] private AudioSource onSound = null;
+    [SerializeField] private AudioSource offSound;
     private bool lightsOut;
 
 
@@ -22,6 +24,10 @@ public class Flashlight : MonoBehaviour
             lightFlashlight.intensity = 
                 (lightFlashlight.intensity == lightOnIntensity) ? 0 : 
                 lightOnIntensity;
+
+            if (lightFlashlight.intensity == lightOnIntensity)
+                onSound.PlayOneShot(onSound.clip);
+            else  offSound.PlayOneShot(offSound.clip);
         }
     }
 
