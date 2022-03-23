@@ -9,7 +9,6 @@ public class OnTriggerEvent : MonoBehaviour
     [SerializeField] private bool destroyOrNot;
     [SerializeField] private string tagName;
     [SerializeField] private UnityEvent ExecuteFunction;
-    [SerializeField] private AudioSource popSound = default;
     
     /// <summary>
     /// Private method called upon colliding with an object.
@@ -20,7 +19,6 @@ public class OnTriggerEvent : MonoBehaviour
         if(other.gameObject.CompareTag(tagName))
         {
             ExecuteFunction.Invoke();
-            popSound.PlayOneShot(popSound.clip);
             if(destroyOrNot)
             {
                 Destroy(this);
