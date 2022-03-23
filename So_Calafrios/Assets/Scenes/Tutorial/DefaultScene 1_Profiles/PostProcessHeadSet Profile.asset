@@ -21,19 +21,19 @@ MonoBehaviour:
     value: 0
   color:
     overrideState: 1
-    value: {r: 0.08076716, g: 0.14150941, b: 0.08694089, a: 0.8509804}
+    value: {r: 0.008810968, g: 0.05660379, b: 0.013436075, a: 0.9137255}
   center:
     overrideState: 1
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.354
+    value: 0.399
   smoothness:
     overrideState: 1
     value: 1
   roundness:
     overrideState: 1
-    value: 0.952
+    value: 1
   rounded:
     overrideState: 1
     value: 1
@@ -119,7 +119,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 1.11
+    value: 1.89
   color:
     overrideState: 1
     value: {r: 0.2924528, g: 0.27727836, b: 0.27727836, a: 1}
@@ -143,7 +143,7 @@ MonoBehaviour:
     value: 0
   radius:
     overrideState: 1
-    value: 5
+    value: 1
   quality:
     overrideState: 1
     value: 2
@@ -212,10 +212,10 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 3
+    value: -1.6
   brightness:
     overrideState: 1
-    value: 15
+    value: -10.4
   postExposure:
     overrideState: 0
     value: 0
@@ -232,14 +232,14 @@ MonoBehaviour:
     overrideState: 0
     value: 0
   mixerGreenOutRedIn:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -52
   mixerGreenOutGreenIn:
-    overrideState: 0
-    value: 100
+    overrideState: 1
+    value: 170
   mixerGreenOutBlueIn:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -72
   mixerBlueOutRedIn:
     overrideState: 0
     value: 0
