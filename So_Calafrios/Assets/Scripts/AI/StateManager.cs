@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StateManager : MonoBehaviour
 {
-    [SerializeField] private State currentState;
+    public State currentState;
 
     // Update is called once per frame
     void Update()
@@ -25,5 +23,9 @@ public class StateManager : MonoBehaviour
     private void SwitchToTheNextState(State nextState)
     {
         currentState = nextState;
+    }
+
+    public string GetCurrentStateName(){
+        return currentState.name;
     }
 }
