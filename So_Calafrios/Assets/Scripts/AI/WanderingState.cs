@@ -9,13 +9,30 @@ public class WanderingState : State
 
     public override State RunCurrentState()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, lord.senseRange, detectionLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 
+            lord.seeRange, detectionLayer);
         for(int i=0; i < colliders.Length;i++)
         {
-            CharacterController player = colliders[i].transform.GetComponent<CharacterController>();
+            CharacterController player = colliders[i].
+                transform.GetComponent<CharacterController>();
             if(player != null)
             {
-                canSeeThePlayer = true;
+                Vector3 targetDirection = player.transform.position - 
+                    transform.position;
+                float viewableAngle = Vector3.Angle(targetDirection, 
+                    transform.forward);
+
+                Debug.Log("In range");
+
+                if((viewableAngle > -lord.viewAngle && viewableAngle <
+                    lord.viewAngle) || 
+                    Vector3.Distance(player.transform.position,
+                    transform.position) < lord.senseRange )
+                {
+                    canSeeThePlayer = true;
+                    Debug.Log("Spotted");
+
+                }
             }
         }
 

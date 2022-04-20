@@ -5,6 +5,7 @@ public class Lord : MonoBehaviour
 {
     public float senseRange;
     public float seeRange;
+    public float viewAngle;
     [SerializeField] private float wanderSpeed;
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float destinationPointRange;

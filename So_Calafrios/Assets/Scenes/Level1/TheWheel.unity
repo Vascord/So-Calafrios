@@ -897,16 +897,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac823d5525b7d24bafedb0df9b532c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 6
+  senseRange: 2
+  seeRange: 10
+  viewAngle: 45
   wanderSpeed: 1.5
-  chaseSpeed: 3
+  chaseSpeed: 5
   destinationPointRange: 3
+  destinationIndex: 0
   destinationPoints:
   - {fileID: 1810020261}
   - {fileID: 1282889800}
   - {fileID: 1535963877}
   - {fileID: 310260496}
-  destinationIndex: 0
   player: {fileID: 1073614017}
 --- !u!1 &1535963876
 GameObject:
