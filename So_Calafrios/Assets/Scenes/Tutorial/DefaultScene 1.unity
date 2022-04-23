@@ -16561,13 +16561,13 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 2df2618f76430274ba1986045a579221, type: 2}
-  m_TreeDistance: 20
-  m_TreeBillboardDistance: 19
+  m_TreeDistance: 15
+  m_TreeBillboardDistance: 16
   m_TreeCrossFadeLength: 10
-  m_TreeMaximumFullLODCount: 0
-  m_DetailObjectDistance: 119
+  m_TreeMaximumFullLODCount: 1251
+  m_DetailObjectDistance: 34
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 1
+  m_HeightmapPixelError: 106.4
   m_SplatMapDistance: 18
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 0
