@@ -5,7 +5,7 @@ using UnityEngine;
 /// </summary>
 public class CheckDeaths : MonoBehaviour
 {
-    [SerializeField] private Chapter0Enemy[] enemies;
+    [SerializeField] private SimpleSpecters[] enemies;
     [SerializeField] private AudioSource[] musicsStart;
     [SerializeField] private AudioSource[] musicsStop;
 
@@ -37,7 +37,7 @@ public class CheckDeaths : MonoBehaviour
     {
         bool check = true;
         
-        foreach(Chapter0Enemy enemy in enemies)
+        foreach(SimpleSpecters enemy in enemies)
         {
             if(enemy != null)
             {

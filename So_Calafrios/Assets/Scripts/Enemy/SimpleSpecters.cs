@@ -3,7 +3,7 @@ using UnityEngine;
 /// <summary>
 /// Class which does the behaviors and actions of the specter enemies.
 /// </summary>
-public class Chapter0Enemy : MonoBehaviour
+public class SimpleSpecters : MonoBehaviour
 {
     [SerializeField] private Transform objectToFollow;
     [SerializeField] private float speed;
