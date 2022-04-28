@@ -8,7 +8,14 @@ public class Chapter0Enemy : MonoBehaviour
     [SerializeField] private Transform objectToFollow;
     [SerializeField] private float speed;
     [SerializeField] private GameObject deadLigth;
+    [SerializeField] private float countdown;
     private bool chase;
+    private AudioSource whispers;
+
+    private void Start()
+    {
+        whispers = GetComponentInChildren<AudioSource>();
+    }
 
     /// <summary>
     /// Private method called 60 times per second.
@@ -17,9 +24,16 @@ public class Chapter0Enemy : MonoBehaviour
     {
         if(chase)
         {
-            // This will make the entity look at the other object follow it.
-            transform.LookAt(objectToFollow.position);
-            transform.Translate(0f, 0f, speed*Time.deltaTime);
+            if(countdown <= 0)     
+            {        
+                // This will make the entity look at the other object follow it.
+                transform.LookAt(objectToFollow.position);
+                transform.Translate(0f, 0f, speed*Time.deltaTime);     
+            } 
+            else
+            {
+                countdown -= Time.deltaTime;   
+            }
         }
     }
 
@@ -29,7 +43,8 @@ public class Chapter0Enemy : MonoBehaviour
     public void Chase()
     {
         chase = true;
-        if(GetComponent<Animator>()){GetComponent<Animator>().enabled = false;}
+        whispers.Play();
+
     }
 
     /// <summary>

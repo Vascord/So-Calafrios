@@ -7,11 +7,11 @@ using UnityEngine.Rendering.PostProcessing;
 public class Headset : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
-    [SerializeField] private Transform invisibleObject;
+    [SerializeField] private Transform invisibleObjects;
     [SerializeField] private PostProcessVolume globalVolume;
     [SerializeField] private PostProcessVolume headsetVolume;
     [SerializeField] private AudioSource soundHeadset;
-
+    [SerializeField] private Light[] lights;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -19,9 +19,9 @@ public class Headset : MonoBehaviour
     private void Start()
     {
         // Desactivates invisible objects.
-        for (int i = 0; i < invisibleObject.childCount; i++)
+        for (int i = 0; i < invisibleObjects.childCount; i++)
         {
-            invisibleObject.GetChild(i).gameObject.SetActive(false);
+            invisibleObjects.GetChild(i).gameObject.SetActive(false);
         }
     }
 
@@ -41,17 +41,22 @@ public class Headset : MonoBehaviour
         soundHeadset.PlayOneShot(soundHeadset.clip);
 
         // Activates/desactivates invisible objects.
-        for (int i = 0; i < invisibleObject.childCount; i++)
+        for (int i = 0; i < invisibleObjects.childCount; i++)
         {
-            if(invisibleObject.GetChild(i).gameObject.activeSelf)
+            if(invisibleObjects.GetChild(i).gameObject.activeSelf)
             {
-                invisibleObject.GetChild(i).gameObject.SetActive(false);
-                
+                invisibleObjects.GetChild(i).gameObject.SetActive(false);
             }
             else
             {
-                invisibleObject.GetChild(i).gameObject.SetActive(true);
+                invisibleObjects.GetChild(i).gameObject.SetActive(true);
             }
+        }
+
+        // Activates/desactivates lights
+        foreach (Light light in lights)
+        {
+            light.enabled = !light.enabled;  
         }
     }
 }
