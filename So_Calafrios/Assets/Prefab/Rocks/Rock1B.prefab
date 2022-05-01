@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4704767001203312562}
   - component: {fileID: 1330314247158102859}
   - component: {fileID: 5314607071820300319}
+  - component: {fileID: 7401095986196135540}
   m_Layer: 0
   m_Name: Rock1B
   m_TagString: Untagged
@@ -98,3 +99,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!64 &7401095986196135540
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741668760337633175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 976e89866374b704f8eff32373bca69c, type: 3}

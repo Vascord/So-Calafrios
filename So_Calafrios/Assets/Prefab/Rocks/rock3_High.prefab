@@ -174,6 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5989649615279308730}
   - component: {fileID: 5893956441434066652}
+  - component: {fileID: 1205353686140784988}
   m_Layer: 0
   m_Name: rock3_High
   m_TagString: Untagged
@@ -225,6 +226,20 @@ LODGroup:
     renderers:
     - renderer: {fileID: 6000232859894005760}
   m_Enabled: 1
+--- !u!64 &1205353686140784988
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5987534978710690818}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 021723daefca0c64ca5ee38d604b5df3, type: 3}
 --- !u!1 &8436609478804982336
 GameObject:
   m_ObjectHideFlags: 0

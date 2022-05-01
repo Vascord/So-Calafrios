@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8877119688613401015}
   - component: {fileID: 2886055542833704270}
   - component: {fileID: 8339024949926254106}
+  - component: {fileID: 6943645835770151602}
   m_Layer: 0
   m_Name: Rock1C
   m_TagString: Untagged
@@ -98,3 +99,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!64 &6943645835770151602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3472699952314210706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: d1edb567dd56f994cbb75a74e047b18a, type: 3}

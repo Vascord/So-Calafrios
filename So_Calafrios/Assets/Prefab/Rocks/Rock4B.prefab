@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 408946844534066807}
   - component: {fileID: 6237581786817475214}
   - component: {fileID: 947770971780843994}
+  - component: {fileID: 5737352275619627055}
   m_Layer: 0
   m_Name: Rock4B
   m_TagString: Untagged
@@ -98,3 +99,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!64 &5737352275619627055
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669048533423064658}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 553d9789b73b4f44b8326e2e6918d951, type: 3}
