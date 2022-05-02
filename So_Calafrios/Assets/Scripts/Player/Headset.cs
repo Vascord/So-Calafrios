@@ -30,8 +30,8 @@ public class Headset : MonoBehaviour
     /// </summary>
     public void HeadsetToggle()
     {
-        globalVolume.enabled= globalVolume.enabled ? false : true;
-        headsetVolume.enabled = headsetVolume.enabled ? false : true;
+        globalVolume.enabled= !globalVolume.enabled;
+        headsetVolume.enabled = !headsetVolume.enabled;
 
         if (flashlight.intensity != 0)
         {
@@ -56,7 +56,7 @@ public class Headset : MonoBehaviour
         // Activates/desactivates lights
         foreach (Light light in lights)
         {
-            light.enabled = !light.enabled;  
+            light.enabled = !light.enabled;
         }
     }
 }

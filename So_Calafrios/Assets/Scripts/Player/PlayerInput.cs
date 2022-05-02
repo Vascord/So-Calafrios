@@ -90,7 +90,7 @@ public class PlayerInput : MonoBehaviour
         // Cheats Button
         if(Input.GetButtonDown("CheatOn"))
         {
-            cheatOn = (cheatOn) ? false : true;
+            cheatOn = !cheatOn;
             cheats.Cheats(0);
         }
 

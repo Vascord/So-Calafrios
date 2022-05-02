@@ -24,7 +24,7 @@ public class PlayerCheats : MonoBehaviour
         switch(cheatNumber) 
         {
             case 0:
-                cheatText.SetActive((cheatText.activeSelf) ? false : true);
+                cheatText.SetActive(cheatText.activeSelf);
                 break;
             case 1:
                 character.enabled = false;
@@ -37,10 +37,8 @@ public class PlayerCheats : MonoBehaviour
                 character.enabled = true;
                 break;
             case 3:
-                playerDeath.invincible = (playerDeath.invincible) ? false : 
-                    true;
-                invincibleText.SetActive((invincibleText.activeSelf) ? false : 
-                    true);
+                playerDeath.invincible = !playerDeath.invincible;
+                invincibleText.SetActive(!invincibleText.activeSelf);
                 break;
             case 4:
                 eMPGrenades.empNumber++;

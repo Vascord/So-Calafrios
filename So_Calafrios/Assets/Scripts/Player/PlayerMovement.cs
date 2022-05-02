@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.Rendering.PostProcessing;
 
 /// <summary>
 /// Class which manages the movement of the player and his effects.
@@ -10,9 +11,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController controller = default;
     [SerializeField] private float speed = 12f;
     [SerializeField] private float maxStamina = 10f;
-    [SerializeField] private TextMeshProUGUI staminaPourcentage;
+    // [SerializeField] private TextMeshProUGUI staminaPourcentage;
     [SerializeField] private AudioSource walkSound = default;
     [SerializeField] private AudioSource runSound = default;
+    [SerializeField] private AudioSource breathingSound = default;
+    [SerializeField] private PostProcessVolume globalVolume;
     [SerializeField] private Animator flashlight = default;
     [SerializeField] private float runStamina = default;
     [SerializeField] private float refreshTime = default;
@@ -22,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float staminaMultiplier = default;
     private float x, z, walkingSpeed, stamina, period, tired;
     private bool firstTimeStoping, firstTimeWalking;
+    private Vignette globalVignette;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -32,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         firstTimeStoping = false;
         firstTimeWalking = true;
         walkingSpeed = speed;
+        globalVolume.profile.TryGetSettings(out globalVignette);
     }
     
     /// <summary>
@@ -61,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     private void Stamina()
     {
-        // This is for the battery of the flashlight.
+        // This is for the stamina of the character.
         if (period > refreshTime)
         {
             if(speed != walkingSpeed && (Input.GetButton("Horizontal") ||
@@ -94,8 +99,27 @@ public class PlayerMovement : MonoBehaviour
                 stamina = maxStamina;
             }
 
+            if(stamina < 5)
+            {
+                if(!breathingSound.isPlaying)
+                {
+                    breathingSound.Play();
+                }
+                breathingSound.volume = 1 - (stamina / 0.5f * 0.1f);
+                globalVignette.intensity.value = 0.7f - (stamina * 0.1f);
+            }
+            else
+            {
+                if(breathingSound.isPlaying)
+                {
+                    breathingSound.Stop();
+                    breathingSound.volume = 0;
+                    globalVignette.intensity.value = 0;
+                }
+            }
+
             // Puts on the interface.
-            staminaPourcentage.text = $"STM:{stamina:n1}";
+            // staminaPourcentage.text = $"STM:{stamina:n1}";
             period = 0;
         }
 
