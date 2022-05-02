@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// Class which manages the behavior of the headset.
@@ -8,8 +8,8 @@ public class Headset : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
     [SerializeField] private Transform invisibleObjects;
-    [SerializeField] private PostProcessVolume globalVolume;
-    [SerializeField] private PostProcessVolume headsetVolume;
+    [SerializeField] private Volume globalVolume;
+    [SerializeField] private Volume headsetVolume;
     [SerializeField] private AudioSource soundHeadset;
     [SerializeField] private Light[] lights;
 

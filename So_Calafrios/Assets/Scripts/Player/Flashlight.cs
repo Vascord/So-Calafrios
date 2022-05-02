@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
 
 /// <summary>
 /// Class which manages the behavior of the flashlight.
@@ -7,7 +7,7 @@ using UnityEngine.Rendering.PostProcessing;
 public class Flashlight : MonoBehaviour
 {
     [SerializeField] private Light lightFlashlight;
-    [SerializeField] private PostProcessVolume globalVolume;
+    [SerializeField] private Volume globalVolume;
     [SerializeField] private float lightOnIntensity;
     [SerializeField] private AudioSource onSound = null;
     [SerializeField] private AudioSource offSound;

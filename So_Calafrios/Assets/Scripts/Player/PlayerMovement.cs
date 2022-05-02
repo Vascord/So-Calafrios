@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// Class which manages the movement of the player and his effects.
@@ -13,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioSource walkSound = default;
     [SerializeField] private AudioSource runSound = default;
     [SerializeField] private AudioSource breathingSound = default;
-    [SerializeField] private PostProcessVolume globalVolume;
+    [SerializeField] private Volume globalVolume = default;
     [SerializeField] private Animator flashlight = default;
     [SerializeField] private float runStamina = default;
     [SerializeField] private float refreshTime = default;
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         firstTimeStoping = false;
         firstTimeWalking = true;
         walkingSpeed = speed;
-        globalVolume.profile.TryGetSettings(out globalVignette);
+        globalVolume.profile.TryGet<Vignette>(out globalVignette);
     }
     
     /// <summary>
