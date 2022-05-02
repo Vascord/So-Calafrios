@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Class which contains the behavoir of the Lord enemy depending of his State.
+/// </summary>
 public class Lord : MonoBehaviour
 {
     public float senseRange;
@@ -16,6 +19,9 @@ public class Lord : MonoBehaviour
     private Vector3 target;
     private StateManager stateManager;
 
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -23,8 +29,12 @@ public class Lord : MonoBehaviour
         UpdateDestination();
     }
 
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
     private void Update() 
     {
+        // Depending of the it's state, it will do a certain behavior.
         switch (stateManager.GetCurrentStateName()) 
         {
             case "Wandering State":
@@ -43,6 +53,9 @@ public class Lord : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method called to do the Wandering behavior of the Lord.
+    /// </summary>
     private void Wander()
     {
         if(Vector3.Distance(transform.position, target) < destinationPointRange)
@@ -52,17 +65,26 @@ public class Lord : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method called to do the Chase behavior of the Lord.
+    /// </summary>
     private void Chase() 
     {
         agent.SetDestination(player.transform.position);
     }
 
+    /// <summary>
+    /// Private method called to update the next destination.
+    /// </summary>
     private void UpdateDestination()
     {
         target = destinationPoints[destinationIndex].position;
         agent.SetDestination(target);
     }
 
+    /// <summary>
+    /// Private method called to get the next destination to Update.
+    /// </summary>
     private void NextDestination()
     {
         destinationIndex++;

@@ -12,6 +12,9 @@ public class SimpleSpecters : MonoBehaviour
     private bool chase;
     private AudioSource whispers;
 
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
     private void Start()
     {
         whispers = GetComponentInChildren<AudioSource>();

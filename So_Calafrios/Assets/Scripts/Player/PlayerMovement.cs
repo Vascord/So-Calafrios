@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using TMPro;
 using UnityEngine.Rendering.PostProcessing;
 
 /// <summary>
@@ -11,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private CharacterController controller = default;
     [SerializeField] private float speed = 12f;
     [SerializeField] private float maxStamina = 10f;
-    // [SerializeField] private TextMeshProUGUI staminaPourcentage;
     [SerializeField] private AudioSource walkSound = default;
     [SerializeField] private AudioSource runSound = default;
     [SerializeField] private AudioSource breathingSound = default;
@@ -117,9 +115,6 @@ public class PlayerMovement : MonoBehaviour
                     globalVignette.intensity.value = 0;
                 }
             }
-
-            // Puts on the interface.
-            // staminaPourcentage.text = $"STM:{stamina:n1}";
             period = 0;
         }
 
