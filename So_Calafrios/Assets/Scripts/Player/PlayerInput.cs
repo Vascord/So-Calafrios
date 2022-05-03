@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private GameObject pause = default;
+    [SerializeField] private PauseManager pauseManager = default;
     public float mouseX { get; private set;}
     public float mouseY { get; private set;}
     public float movementX { get; private set;}
@@ -18,6 +19,7 @@ public class PlayerInput : MonoBehaviour
     private PauseMenu pauseMenu;
     private PlayerCheats cheats;
     private bool cheatOn;
+    public bool inGameInputs;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -32,12 +34,25 @@ public class PlayerInput : MonoBehaviour
         pauseMenu = pause.GetComponent<PauseMenu>();
         cheats = gameObject.GetComponent<PlayerCheats>();
         cheatOn = false;
+        inGameInputs = true;
     }
 
     /// <summary>
     /// Private method called every frame.
     /// </summary>
     private void Update()
+    {
+        if(inGameInputs)
+        {
+            InGameInputs();
+        }
+        else
+        {
+            MenuInputs();
+        }
+    }
+
+    private void InGameInputs()
     {
         // Mouse input.
         mouseX = Input.GetAxis("Mouse X");
@@ -116,6 +131,14 @@ public class PlayerInput : MonoBehaviour
         if(cheatOn && Input.GetButtonDown("Cheat4"))
         {
             cheats.Cheats(4);
+        }
+    }
+
+    private void MenuInputs()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.PauseKey();
         }
     }
 }

@@ -105,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
                     breathingSound.Play();
                 }
                 breathingSound.volume = 1 - (stamina / 0.5f * 0.1f);
-                globalVignette.intensity.value = 0.7f - (stamina * 0.1f);
+                globalVignette.intensity.value = 0.5f - (stamina * 0.1f);
             }
             else
             {

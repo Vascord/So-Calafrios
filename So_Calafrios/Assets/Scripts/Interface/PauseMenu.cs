@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI = default;
     [SerializeField] private GameObject options = default;
+    [SerializeField] private PauseManager pauseManager = default;
 
     /// <summary>
     /// Private method which stops the game and permits the free
@@ -26,9 +27,10 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
         gameIsPaused = true;
         AudioListener.pause = true;
+        pauseManager.TogglePause();
+        player.inGameInputs = false;
     }
 
     /// <summary>
@@ -38,9 +40,10 @@ public class PauseMenu : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
         gameIsPaused = false;
         AudioListener.pause = false;
+        pauseManager.TogglePause();
+        player.inGameInputs = true;
     }
 
     /// <summary>
@@ -48,7 +51,6 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     private void LoadMenu()
     {
-        Time.timeScale = 1f;
         player.enabled = false;
         fadeCanvas.SetActive(true);
         StartCoroutine(Transition(menuSceneNumber));
