@@ -12,6 +12,7 @@ public class PlayerInteraction : MonoBehaviour
     private Interactive _currentInteractive;
     private bool _requirementsInInventory;
     private List<Interactive> _inventory;
+    private ThrowEMP empObject;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -20,6 +21,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         _requirementsInInventory    = false;
         _inventory                  = new List<Interactive>();
+        empObject = GetComponent<ThrowEMP>();
     }
 
     /// <summary>
@@ -119,6 +121,24 @@ public class PlayerInteraction : MonoBehaviour
     }
 
     /// <summary>
+    /// Private method to pick an object to his inventory.
+    /// </summary>
+    private void AddObjectToValue(float numberObject, string objectType)
+    {
+        _currentInteractive.gameObject.SetActive(false);
+        if(objectType == "Emp")
+        {
+            AddEmps(numberObject);
+        }
+    }
+
+    private void AddEmps(float numberEmps)
+    {
+        empObject.empNumber += (int)numberEmps;
+        empObject.UpdateText();
+    }
+
+    /// <summary>
     /// Private method which do the interact of the object.
     /// </summary>
     private void InteractWithCurrentInteractive()
@@ -176,9 +196,15 @@ public class PlayerInteraction : MonoBehaviour
         {
             // Sees if it's a pickable item.
             if (_currentInteractive.type == 
-                Interactive.InteractiveType.PICKABLE)
+                Interactive.InteractiveType.PICKABLE_INVENTORY)
             {
                 PickCurrentInteractive();
+            }
+            else if(_currentInteractive.type == 
+                Interactive.InteractiveType.PICKABLE_OBJECT)
+            {
+                AddObjectToValue(_currentInteractive.numberObject, 
+                    _currentInteractive.typeObject);
             }
             // Sees if it's just to interact.
             else if (_requirementsInInventory)

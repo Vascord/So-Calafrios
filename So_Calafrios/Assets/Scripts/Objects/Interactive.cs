@@ -6,10 +6,13 @@ using UnityEngine;
 public class Interactive : MonoBehaviour
 {
     public enum InteractiveType {
-        PICKABLE,
+        PICKABLE_INVENTORY,
+        PICKABLE_OBJECT,
         INTERACT_ONCE,
         INTERACT_MULTI,
         INDIRECT };
+    public float numberObject;
+    public string typeObject;
     public InteractiveType type;
     public string requirementText;
     public Interactive[] requirements;
@@ -78,7 +81,8 @@ public class Interactive : MonoBehaviour
             ProcessDeactivationChain();
 
             if (type == InteractiveType.INTERACT_ONCE || 
-                type == InteractiveType.PICKABLE)
+                type == InteractiveType.PICKABLE_INVENTORY ||
+                 type == InteractiveType.PICKABLE_OBJECT)
             {
                 Destroy(this);
             }
@@ -91,7 +95,8 @@ public class Interactive : MonoBehaviour
             ProcessInteractionChain();
 
             if (type == InteractiveType.INTERACT_ONCE || 
-                type == InteractiveType.PICKABLE)
+                type == InteractiveType.PICKABLE_INVENTORY ||
+                 type == InteractiveType.PICKABLE_OBJECT)
             {
                 Destroy(this);
             }
