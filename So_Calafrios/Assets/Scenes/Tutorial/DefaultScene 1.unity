@@ -7888,6 +7888,33 @@ MonoBehaviour:
   activationChain: []
   deActivationChain: []
   interactionChain: []
+  events:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1221674624}
+        m_TargetAssemblyTypeName: PlayerInput, Assembly-CSharp
+        m_MethodName: HeadsetActivate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8184860624051023694}
+        m_TargetAssemblyTypeName: Headset, Assembly-CSharp
+        m_MethodName: HeadsetToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!65 &371620952
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9396,6 +9423,9 @@ MonoBehaviour:
   activationChain: []
   deActivationChain: []
   interactionChain: []
+  events:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &619557489
 Animator:
   serializedVersion: 3
@@ -38248,6 +38278,9 @@ MonoBehaviour:
   activationChain: []
   deActivationChain: []
   interactionChain: []
+  events:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &2003204251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49532,6 +49565,9 @@ MonoBehaviour:
   activationChain: []
   deActivationChain: []
   interactionChain: []
+  events:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &4851376354302675649
 Transform:
   m_ObjectHideFlags: 0
@@ -50233,6 +50269,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: flashlight
       value: 
       objectReference: {fileID: 1360070761}
@@ -50448,6 +50488,10 @@ PrefabInstance:
       propertyPath: pause
       value: 
       objectReference: {fileID: 1621815114}
+    - target: {fileID: 8184860623108434376, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: inGameInputs
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434376, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: pauseManager
       value: 

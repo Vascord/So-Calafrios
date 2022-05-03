@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Class which controls the interact between the player and the object.
@@ -22,6 +23,7 @@ public class Interactive : MonoBehaviour
     [SerializeField] private Interactive[] activationChain = default;
     [SerializeField] private Interactive[] deActivationChain = default;
     [SerializeField] private Interactive[] interactionChain = default;
+    public UnityEvent events = default;
     private Animator _animator;
     private int _curInteractionTextId;
     private AudioSource sound;

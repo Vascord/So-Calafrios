@@ -7,10 +7,12 @@ public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private GameObject pause = default;
     [SerializeField] private PauseManager pauseManager = default;
+    [SerializeField] private bool headsetOn;
     public float mouseX { get; private set;}
     public float mouseY { get; private set;}
     public float movementX { get; private set;}
     public float movementZ { get; private set;}
+    public bool inGameInputs;
     private PlayerMovement movement;
     private Flashlight flashlight;
     private ThrowEMP eMP;
@@ -19,7 +21,6 @@ public class PlayerInput : MonoBehaviour
     private PauseMenu pauseMenu;
     private PlayerCheats cheats;
     private bool cheatOn;
-    public bool inGameInputs;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -35,6 +36,7 @@ public class PlayerInput : MonoBehaviour
         cheats = gameObject.GetComponent<PlayerCheats>();
         cheatOn = false;
         inGameInputs = true;
+        headsetOn = false;
     }
 
     /// <summary>
@@ -85,7 +87,7 @@ public class PlayerInput : MonoBehaviour
         }
 
         // Input for headset.
-        if(Input.GetButtonDown("HeadsetToggle"))
+        if(Input.GetButtonDown("HeadsetToggle") && headsetOn)
         {
             headset.HeadsetToggle();
         }
@@ -140,5 +142,10 @@ public class PlayerInput : MonoBehaviour
         {
             pauseMenu.PauseKey();
         }
+    }
+
+    public void HeadsetActivate()
+    {
+        headsetOn = true;
     }
 }

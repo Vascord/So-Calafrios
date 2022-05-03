@@ -194,6 +194,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (_currentInteractive != null)
         {
+            if(_currentInteractive.events != null)
+            {
+                _currentInteractive.events.Invoke();
+            }
+
             // Sees if it's a pickable item.
             if (_currentInteractive.type == 
                 Interactive.InteractiveType.PICKABLE_INVENTORY)
