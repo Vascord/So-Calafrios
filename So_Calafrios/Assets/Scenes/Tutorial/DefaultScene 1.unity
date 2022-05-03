@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.26666668, g: 0.29411766, b: 0.33333334, a: 0.83137256}
+  m_FogColor: {r: 0.15294118, g: 0.1764706, b: 0.20784315, a: 0.83137256}
   m_FogMode: 2
   m_FogDensity: 0.1
   m_LinearFogStart: 0
@@ -25,7 +25,7 @@ RenderSettings:
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
-  m_SubtractiveShadowColor: {r: 0.26666668, g: 0.29411766, b: 0.33333334, a: 1}
+  m_SubtractiveShadowColor: {r: 0.15174441, g: 0.17472202, b: 0.20754719, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -756,50 +756,6 @@ PrefabInstance:
     - target: {fileID: 2048487557469224744, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.973
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624616, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624616, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 4.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624616, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624616, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7714788
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624616, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.636255
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624616, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 79.026
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624631, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_Range
-      value: 12.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624631, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8160377
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624631, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9731722
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624631, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_Intensity
-      value: 4.63
-      objectReference: {fileID: 0}
-    - target: {fileID: 2048487557986624631, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
-      propertyPath: m_SpotAngle
-      value: 92.789406
       objectReference: {fileID: 0}
     - target: {fileID: 6419604580342832736, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
       propertyPath: m_RootOrder
@@ -24572,13 +24528,13 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.30980393, g: 0.30980393, b: 0.30980393, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.05
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: 0
     m_CustomResolution: -1
     m_Strength: 0.174
@@ -24755,6 +24711,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb9055f73b5405f49b5209c9bedd3e75, type: 3}
+--- !u!1 &1109756997 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2765872112181202397, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+  m_PrefabInstance: {fileID: 2765872113539171770}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109756999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109756997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 0
 --- !u!1 &1116413853
 GameObject:
   m_ObjectHideFlags: 0
@@ -25525,26 +25500,6 @@ PrefabInstance:
     - target: {fileID: 8839639191458656763, guid: 3ed485b98833de146b5042f363e30406, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 1.918
-      objectReference: {fileID: 0}
-    - target: {fileID: 8839639191458656764, guid: 3ed485b98833de146b5042f363e30406, type: 3}
-      propertyPath: m_Range
-      value: 12.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 8839639191458656764, guid: 3ed485b98833de146b5042f363e30406, type: 3}
-      propertyPath: m_Color.b
-      value: 0.8160377
-      objectReference: {fileID: 0}
-    - target: {fileID: 8839639191458656764, guid: 3ed485b98833de146b5042f363e30406, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9731722
-      objectReference: {fileID: 0}
-    - target: {fileID: 8839639191458656764, guid: 3ed485b98833de146b5042f363e30406, type: 3}
-      propertyPath: m_Intensity
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8839639191458656764, guid: 3ed485b98833de146b5042f363e30406, type: 3}
-      propertyPath: m_SpotAngle
-      value: 92.789406
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ed485b98833de146b5042f363e30406, type: 3}
@@ -49497,9 +49452,45 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2765872112181202387, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_SpotAngle
+      value: 58.000027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872112181202387, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 34.8249
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872112181202387, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872112181202387, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872112181202387, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872112181202387, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_Shadows.m_Resolution
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 2765872113025228753, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872113025228757, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.20784315
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872113025228757, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.1764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2765872113025228757, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.15294118
       objectReference: {fileID: 0}
     - target: {fileID: 2765872113025228758, guid: 9ae6e03816aa88f428367a7392180eb3, type: 3}
       propertyPath: m_RootOrder
@@ -50618,6 +50609,10 @@ PrefabInstance:
       propertyPath: lightFlashlight
       value: 
       objectReference: {fileID: 1360070761}
+    - target: {fileID: 8184860623108434231, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: lightOnIntensity
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434239, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: m_Name
       value: Player
