@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 18220932}
   - component: {fileID: 5882393046080109602}
   m_Layer: 0
-  m_Name: CTI  URP Windzone
+  m_Name: PF CTI  URP Windzone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,4 +58,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 897a09e95f3c16049a601ce6e13e5caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WindMultiplier: 1
+  WindMultiplier: 0.2
