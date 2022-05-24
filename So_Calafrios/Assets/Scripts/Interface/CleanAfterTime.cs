@@ -12,17 +12,21 @@ public class CleanAfterTime : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        // This is for the battery of the flashlight.
-        if (period > refreshTime)
+        if(gameObject.GetComponent<TextMeshProUGUI>().text != "")
         {
-            timeDestroy++;
-            if(timeDestroy == maxTime)
+            // This is for the battery of the flashlight.
+            if (period > refreshTime)
             {
-                gameObject.GetComponent<TextMeshProUGUI>().text = "";
+                timeDestroy++;
+                if(timeDestroy == maxTime)
+                {
+                    gameObject.GetComponent<TextMeshProUGUI>().text = "";
+                    timeDestroy = 0;
+                }
+                period = 0;
             }
-            period = 0;
-        }
 
-        period += Time.deltaTime;
+            period += Time.deltaTime;
+        }
     }
 }

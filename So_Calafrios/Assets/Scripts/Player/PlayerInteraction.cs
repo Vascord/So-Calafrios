@@ -13,12 +13,14 @@ public class PlayerInteraction : MonoBehaviour
     private bool _requirementsInInventory;
     private List<Interactive> _inventory;
     private ThrowEMP empObject;
+    private LayerMask layerMask;
 
     /// <summary>
     /// Private method called before the first frame.
     /// </summary>
     private void Start()
     {
+        layerMask = ~(1 << LayerMask.NameToLayer ("Player"));
         _requirementsInInventory    = false;
         _inventory                  = new List<Interactive>();
         empObject = GetComponent<ThrowEMP>();
@@ -41,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(cameraTransform.position,
             cameraTransform.forward,
             out RaycastHit hitInfo,
-            MAX_INTERACTION_DISTANCE))
+            MAX_INTERACTION_DISTANCE, layerMask))
         {
             Interactive interactive =
                 hitInfo.transform.GetComponent<Interactive>();
@@ -118,6 +120,10 @@ public class PlayerInteraction : MonoBehaviour
     {
         _currentInteractive.gameObject.SetActive(false);
         AddToInventory(_currentInteractive);
+        if(_currentInteractive.events != null)
+        {
+            _currentInteractive.events.Invoke();
+        }
     }
 
     /// <summary>
@@ -129,6 +135,10 @@ public class PlayerInteraction : MonoBehaviour
         if(objectType == "Emp")
         {
             AddEmps(numberObject);
+        }
+         if(_currentInteractive.events != null)
+        {
+            _currentInteractive.events.Invoke();
         }
     }
 
@@ -148,6 +158,10 @@ public class PlayerInteraction : MonoBehaviour
             Interactive currentRequirement = 
                 _currentInteractive.requirements[i];
             currentRequirement.Interact();
+             if(_currentInteractive.events != null)
+            {
+                _currentInteractive.events.Invoke();
+            }
             RemoveFromInventory(currentRequirement);
         }
 
@@ -194,11 +208,6 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (_currentInteractive != null)
         {
-            if(_currentInteractive.events != null)
-            {
-                _currentInteractive.events.Invoke();
-            }
-
             // Sees if it's a pickable item.
             if (_currentInteractive.type == 
                 Interactive.InteractiveType.PICKABLE_INVENTORY)
