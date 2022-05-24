@@ -8,10 +8,12 @@ public class Headset : MonoBehaviour
 {
     [SerializeField] private Light flashlight;
     [SerializeField] private Transform invisibleObjects;
+    [SerializeField] private Transform invisibleEnemies;
     [SerializeField] private Volume globalVolume;
     [SerializeField] private Volume headsetVolume;
     [SerializeField] private AudioSource soundHeadset;
     [SerializeField] private Light[] lights;
+    private SkinnedMeshRenderer[] invisibleEnemiesSkin;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -22,6 +24,14 @@ public class Headset : MonoBehaviour
         for (int i = 0; i < invisibleObjects.childCount; i++)
         {
             invisibleObjects.GetChild(i).gameObject.SetActive(false);
+        }
+
+        invisibleEnemiesSkin = invisibleEnemies.GetComponentsInChildren<
+            SkinnedMeshRenderer>();
+
+        foreach(SkinnedMeshRenderer invisibleEnemieSkin in invisibleEnemiesSkin)
+        {
+            invisibleEnemieSkin.enabled = false;
         }
     }
 
@@ -51,6 +61,12 @@ public class Headset : MonoBehaviour
             {
                 invisibleObjects.GetChild(i).gameObject.SetActive(true);
             }
+        }
+
+        // Activates/desactivates invisible enemies skin.
+        foreach(SkinnedMeshRenderer invisibleEnemieSkin in invisibleEnemiesSkin)
+        {
+            invisibleEnemieSkin.enabled = !invisibleEnemieSkin.enabled;
         }
 
         // Activates/desactivates lights
