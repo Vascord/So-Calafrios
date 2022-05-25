@@ -5,6 +5,9 @@ using UnityEngine;
 /// </summary>
 public class EMPTrigger : MonoBehaviour
 {
+    private Camera cam;
+    private int tempCul;
+    private CameraClearFlags tempFlag;
     /// <summary>
     /// Private method called upon colliding with an object.
     /// </summary>
@@ -34,5 +37,21 @@ public class EMPTrigger : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    private void FreezeCamera()
+    {
+        cam = Camera.main;
+        tempCul = cam.cullingMask;
+        tempFlag = cam.clearFlags;
+        cam.clearFlags = CameraClearFlags.Nothing;
+        cam.cullingMask = 0;
+    }
+    void UnfreezeCamera()
+    {
+        Debug.Log(tempCul);
+        Debug.Log(tempFlag);
+        cam = Camera.main;
+        cam.cullingMask = tempCul;
+        cam.clearFlags = tempFlag;
     }
 }
