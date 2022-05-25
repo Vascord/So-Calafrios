@@ -5,9 +5,15 @@ using UnityEngine;
 /// </summary>
 public class EMPTrigger : MonoBehaviour
 {
-    private Camera cam;
-    private int tempCul;
-    private CameraClearFlags tempFlag;
+    [SerializeField] private float MAX_ZONE_DISTANCE;
+    private LayerMask layerMask;
+    private RaycastHit hitInfo;
+
+    private void Start()
+    {
+        layerMask = 1 << LayerMask.NameToLayer("Player");
+    }
+
     /// <summary>
     /// Private method called upon colliding with an object.
     /// </summary>
@@ -31,27 +37,23 @@ public class EMPTrigger : MonoBehaviour
                 Destroy(other.gameObject);
             }
             Destroy(gameObject);
+            PlayerHeadsetDetect();
+
         }
         // If it hits anything else, it's destroyed.
         else
         {
             Destroy(gameObject);
+            PlayerHeadsetDetect();
         }
     }
-    private void FreezeCamera()
+
+    private void PlayerHeadsetDetect()
     {
-        cam = Camera.main;
-        tempCul = cam.cullingMask;
-        tempFlag = cam.clearFlags;
-        cam.clearFlags = CameraClearFlags.Nothing;
-        cam.cullingMask = 0;
-    }
-    void UnfreezeCamera()
-    {
-        Debug.Log(tempCul);
-        Debug.Log(tempFlag);
-        cam = Camera.main;
-        cam.cullingMask = tempCul;
-        cam.clearFlags = tempFlag;
+        foreach(Collider collider in Physics.OverlapSphere(
+            transform.position, MAX_ZONE_DISTANCE,layerMask))
+        {
+            collider.transform.GetComponent<Headset>().EMPInterference();
+        }
     }
 }

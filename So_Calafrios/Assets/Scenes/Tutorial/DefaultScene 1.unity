@@ -27089,18 +27089,6 @@ MonoBehaviour:
           m_StringArgument: W,A,S,D - Move / Shift - Sprint
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 831403566}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: PlayOneShot
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: df2549b832b01bf40be265ea515ef313, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!65 &819873493
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84873,6 +84861,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: maxTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -84880,6 +84872,10 @@ PrefabInstance:
       propertyPath: flashlight
       value: 
       objectReference: {fileID: 1360070761}
+    - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: refreshTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: globalVolume
       value: 

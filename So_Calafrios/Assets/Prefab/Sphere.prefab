@@ -112,6 +112,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f5778c329d1284391c5635f8eb705e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_ZONE_DISTANCE: 10
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!54 &7017834534959546460
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,7 +13,15 @@ public class Headset : MonoBehaviour
     [SerializeField] private Volume headsetVolume;
     [SerializeField] private AudioSource soundHeadset;
     [SerializeField] private Light[] lights;
+    [SerializeField] private float refreshTime = default;
+    [SerializeField] private float maxTime = default;
+    private float period, timeDestroy;
+    private Camera cam;
+    private int tempCul;
+    private CameraClearFlags tempFlag;
     private SkinnedMeshRenderer[] invisibleEnemiesSkin;
+    private bool cameraFreeze;
+    private bool firstFreeze;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -33,6 +41,39 @@ public class Headset : MonoBehaviour
         {
             invisibleEnemieSkin.enabled = false;
         }
+
+        cameraFreeze = false;
+        firstFreeze = true;
+    }
+
+    private void Update()
+    {
+        if(cameraFreeze)
+        {
+            if(headsetVolume.enabled && firstFreeze)
+            {
+                FreezeCamera();
+            }
+
+            // This is for the battery of the flashlight.
+            if (period > refreshTime)
+            {
+                timeDestroy++;
+                if(timeDestroy == maxTime)
+                {
+                    cameraFreeze = false;
+                    if(headsetVolume.enabled)
+                    {
+                        UnfreezeCamera();
+                    }
+                    timeDestroy = 0;
+                }
+                period = 0;
+            }
+
+            Debug.Log(timeDestroy);
+            period += Time.deltaTime;
+        }
     }
 
     /// <summary>
@@ -46,6 +87,11 @@ public class Headset : MonoBehaviour
         if (flashlight.intensity != 0)
         {
             flashlight.intensity = 0;
+        }
+
+        else if(!headsetVolume.enabled && cameraFreeze)
+        {
+            UnfreezeCamera();
         }
 
         soundHeadset.PlayOneShot(soundHeadset.clip);
@@ -74,5 +120,31 @@ public class Headset : MonoBehaviour
         {
             light.enabled = !light.enabled;
         }
+    }
+    
+    public void EMPInterference()
+    {
+        cameraFreeze = true;
+        timeDestroy = 0;
+    }
+
+    private void FreezeCamera()
+    {
+        firstFreeze = false;
+        cam = Camera.main;
+        tempCul = cam.cullingMask;
+        tempFlag = cam.clearFlags;
+        cam.clearFlags = CameraClearFlags.Nothing;
+        cam.cullingMask = 0;
+    }
+
+    private void UnfreezeCamera()
+    {
+        // Debug.Log(tempCul);
+        // Debug.Log(tempFlag);
+        firstFreeze = true;
+        cam = Camera.main;
+        cam.cullingMask = tempCul;
+        cam.clearFlags = tempFlag;
     }
 }
