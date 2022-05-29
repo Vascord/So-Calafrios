@@ -10677,7 +10677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ac8dddad2a4e143b9d77ec63b863e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberObject: 5
+  numberObject: 3
   typeObject: Emp
   type: 1
   requirementText: 
@@ -10719,6 +10719,18 @@ MonoBehaviour:
       - m_Target: {fileID: 808074819}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 8184860624051023693}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -85898,13 +85910,33 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1350637251}
     - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: maxEMPs
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: maxEmps
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: maxTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: empNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 626504750}
+    - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: refreshTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434377, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: empNumberText
       value: 
@@ -85974,7 +86006,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8184860624051023688}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184860624051023689}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b6dfa5a464ea0478e86918b7c59503, type: 3}
   m_Name: 

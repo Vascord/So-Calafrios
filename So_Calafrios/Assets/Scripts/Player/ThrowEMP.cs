@@ -11,6 +11,10 @@ public class ThrowEMP : MonoBehaviour
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private TextMeshProUGUI empNumberText;
     [SerializeField] private int forceMultiplier;
+    [SerializeField] private int maxEmps;
+    [SerializeField] private float refreshTime = default;
+    [SerializeField] private float maxTime = default;
+    private float period, timeDestroy;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -18,6 +22,26 @@ public class ThrowEMP : MonoBehaviour
     private void Start()
     {
         UpdateText();
+    }
+
+    private void Update()
+    {
+        if(empNumber < maxEmps)
+        {
+            // This is for the battery of the flashlight.
+            if (period > refreshTime)
+            {
+                timeDestroy++;
+                if(timeDestroy == maxTime)
+                {
+                    empNumber++;
+                    UpdateText();
+                }
+                period = 0;
+            }
+
+            period += Time.deltaTime;
+        }
     }
 
     /// <summary>
@@ -39,6 +63,6 @@ public class ThrowEMP : MonoBehaviour
 
     public void UpdateText()
     {
-        empNumberText.text = $"x{empNumber}";
+        empNumberText.text = $"x{empNumber}";   
     }
 }
