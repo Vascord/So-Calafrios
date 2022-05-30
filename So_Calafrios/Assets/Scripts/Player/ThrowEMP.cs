@@ -34,6 +34,7 @@ public class ThrowEMP : MonoBehaviour
                 timeDestroy++;
                 if(timeDestroy == maxTime)
                 {
+                    timeDestroy = 0;
                     empNumber++;
                     UpdateText();
                 }

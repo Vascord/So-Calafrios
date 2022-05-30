@@ -10937,6 +10937,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8184860624051023693}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   NoInteractionEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -12012,7 +12024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 1221674618}
-  speed: 6
+  speed: 4.5
   deadLigth: {fileID: 1618719807003373959, guid: 30098e20637aa2a499af70e1b804a99d, type: 3}
   countdown: 0
 --- !u!136 &432448393
@@ -12904,10 +12916,10 @@ AudioSource:
   m_GameObject: {fileID: 503315487}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 274c3c85cbe5db04e9c2b7f09996a16c, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19894,7 +19906,7 @@ Transform:
   - {fileID: 413730747}
   - {fileID: 822225256}
   m_Father: {fileID: 1610248512}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &671295933
 GameObject:
@@ -31638,7 +31650,7 @@ Transform:
   m_Children:
   - {fileID: 904285234}
   m_Father: {fileID: 1610248512}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &990873095 stripped
 Transform:
@@ -40131,7 +40143,7 @@ Transform:
   - {fileID: 1928415150}
   - {fileID: 1525822945}
   m_Father: {fileID: 1610248512}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1214096568
 PrefabInstance:
@@ -45611,7 +45623,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Space - Throw EMP to neutralize entities
+          m_StringArgument: Right click - Throw EMP to neutralize entities
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!65 &1525822947
@@ -47427,9 +47439,9 @@ Transform:
   m_LocalScale: {x: 36.44304, y: 172.4118, z: 56.967766}
   m_Children:
   - {fileID: 2065878940}
-  - {fileID: 986016822}
   - {fileID: 1212286258}
   - {fileID: 664824413}
+  - {fileID: 986016822}
   m_Father: {fileID: 1355452898}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47609,6 +47621,7 @@ MonoBehaviour:
   menuSceneNumber: 0
   pauseMenuUI: {fileID: 1166728875}
   options: {fileID: 544236668}
+  helpMenu: {fileID: 1474392031}
   pauseManager: {fileID: 1350637251}
 --- !u!114 &1621815116
 MonoBehaviour:
@@ -57543,6 +57556,107 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6419604580342832736, guid: 0ac8c7292c9cebe40af67618c9d536b3, type: 3}
   m_PrefabInstance: {fileID: 1815692221}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1820479270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8184860622833457931, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+  m_PrefabInstance: {fileID: 8184860624051023688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1820479273
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820479270}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 274c3c85cbe5db04e9c2b7f09996a16c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 6a5c4f55c34c6ad408dd991e5c48430e, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1829340485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65078,20 +65192,20 @@ AudioSource:
     - serializedVersion: 3
       time: 0.033333335
       value: 1
-      inSlope: -30.011993
-      outSlope: -30.011993
+      inSlope: -0.46997303
+      outSlope: -0.46997303
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 1
     - serializedVersion: 3
-      time: 0.039995328
+      time: 0.110792294
       value: 0.9505997
-      inSlope: -0.24042232
-      outSlope: -0.24042232
+      inSlope: -0.19890511
+      outSlope: -0.19890511
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 1
       outWeight: 0.6290502
     - serializedVersion: 3
       time: 0.1777766
@@ -65103,8 +65217,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.44222313
-      value: 0.85803986
+      time: 0.35150963
+      value: 0.809227
       inSlope: -0.11723435
       outSlope: -0.11723435
       tangentMode: 0
@@ -65112,13 +65226,13 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.78800124
-      value: 0.6147347
-      inSlope: -2.4888546
-      outSlope: -2.4888546
+      time: 0.7901985
+      value: 0.6114846
+      inSlope: -0.39687252
+      outSlope: -0.39687252
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.21486159
+      inWeight: 0.2076267
       outWeight: 0.563159
     - serializedVersion: 3
       time: 0.86455137
@@ -65146,7 +65260,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.95
+      value: 0.97
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -77718,13 +77832,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146041620}
-  m_LocalRotation: {x: 0.000000014901161, y: -0.5966076, z: 0.000000059604645, w: 0.8025331}
-  m_LocalPosition: {x: -21.63, y: 177.84, z: 183.14}
-  m_LocalScale: {x: 3.1272001, y: 5.6916, z: 18.021997}
+  m_LocalRotation: {x: 0.000000059604645, y: -0.72131014, z: -0.000000059604645, w: 0.6926123}
+  m_LocalPosition: {x: -18.07, y: 192.81, z: 211.93}
+  m_LocalScale: {x: 2.4327257, y: 4.5278387, z: 1.9507791}
   m_Children: []
   m_Father: {fileID: 1212286258}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: -73.255, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -92.326, z: 0}
 --- !u!114 &2146041622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79211,6 +79325,66 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.110792294
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].time
+      value: 0.35150963
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].time
+      value: 0.7901985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[3].value
+      value: 0.809227
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].value
+      value: 0.6114846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].inSlope
+      value: -0.46997303
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inSlope
+      value: -0.19890511
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].inSlope
+      value: -0.39687252
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outSlope
+      value: -0.46997303
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].inWeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outSlope
+      value: -0.19890511
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].inWeight
+      value: 0.2076267
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[4].outSlope
+      value: -0.39687252
+      objectReference: {fileID: 0}
+    - target: {fileID: 1416395036961317172, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[0].outWeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4838640883263096637, guid: e9ee27bdd0fabcd4eb9a553322322819, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -79281,20 +79455,20 @@ AudioSource:
     - serializedVersion: 3
       time: 0.033333335
       value: 1
-      inSlope: -30.011993
-      outSlope: -30.011993
+      inSlope: -0.46997303
+      outSlope: -0.46997303
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 1
     - serializedVersion: 3
-      time: 0.039995328
+      time: 0.110792294
       value: 0.9505997
-      inSlope: -0.24042232
-      outSlope: -0.24042232
+      inSlope: -0.19890511
+      outSlope: -0.19890511
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 1
       outWeight: 0.6290502
     - serializedVersion: 3
       time: 0.1777766
@@ -79306,8 +79480,8 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.44222313
-      value: 0.85803986
+      time: 0.35150963
+      value: 0.809227
       inSlope: -0.11723435
       outSlope: -0.11723435
       tangentMode: 0
@@ -79315,13 +79489,13 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.78800124
-      value: 0.6147347
-      inSlope: -2.4888546
-      outSlope: -2.4888546
+      time: 0.7901985
+      value: 0.6114846
+      inSlope: -0.39687252
+      outSlope: -0.39687252
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.21486159
+      inWeight: 0.2076267
       outWeight: 0.563159
     - serializedVersion: 3
       time: 0.86455137
@@ -79349,7 +79523,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.95
+      value: 0.97
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -87433,7 +87607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: maxTime
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: m_Enabled
@@ -87471,6 +87645,10 @@ PrefabInstance:
       propertyPath: lights.Array.size
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
+      propertyPath: staticNoiseHeadset
+      value: 
+      objectReference: {fileID: 1820479273}
     - target: {fileID: 8184860623108434228, guid: 6ea7ea55a543a1c46a86b4e8e03dacfb, type: 3}
       propertyPath: lights.Array.data[0]
       value: 

@@ -17,6 +17,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI = default;
     [SerializeField] private GameObject options = default;
+    [SerializeField] private GameObject helpMenu = default;
     [SerializeField] private PauseManager pauseManager = default;
 
     /// <summary>
@@ -76,6 +77,11 @@ public class PauseMenu : MonoBehaviour
         else if(gameIsPaused && options.activeSelf)
         {
             options.SetActive(false);
+            pauseMenuUI.SetActive(true);
+        }
+        else if(gameIsPaused && helpMenu.activeSelf)
+        {
+            helpMenu.SetActive(false);
             pauseMenuUI.SetActive(true);
         }
         else

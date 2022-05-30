@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 /// <summary>
 /// Class which manages the behavior of the headset.
@@ -12,6 +13,7 @@ public class Headset : MonoBehaviour
     [SerializeField] private Volume globalVolume;
     [SerializeField] private Volume headsetVolume;
     [SerializeField] private AudioSource soundHeadset;
+    [SerializeField] private AudioSource staticNoiseHeadset;
     [SerializeField] private Light[] lights;
     [SerializeField] private float refreshTime = default;
     [SerializeField] private float maxTime = default;
@@ -22,6 +24,7 @@ public class Headset : MonoBehaviour
     private SkinnedMeshRenderer[] invisibleEnemiesSkin;
     private bool cameraFreeze;
     private bool firstFreeze;
+    private FilmGrain headsetGrain;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -44,6 +47,8 @@ public class Headset : MonoBehaviour
 
         cameraFreeze = false;
         firstFreeze = true;
+
+        headsetVolume.profile.TryGet<FilmGrain>(out headsetGrain);
     }
 
     private void Update()
@@ -71,7 +76,6 @@ public class Headset : MonoBehaviour
                 period = 0;
             }
 
-            Debug.Log(timeDestroy);
             period += Time.deltaTime;
         }
     }
@@ -112,7 +116,10 @@ public class Headset : MonoBehaviour
         // Activates/desactivates invisible enemies skin.
         foreach(SkinnedMeshRenderer invisibleEnemieSkin in invisibleEnemiesSkin)
         {
-            invisibleEnemieSkin.enabled = !invisibleEnemieSkin.enabled;
+            if(invisibleEnemieSkin != null)
+            {
+                invisibleEnemieSkin.enabled = !invisibleEnemieSkin.enabled;
+            }
         }
 
         // Activates/desactivates lights
@@ -136,6 +143,8 @@ public class Headset : MonoBehaviour
         tempFlag = cam.clearFlags;
         cam.clearFlags = CameraClearFlags.Nothing;
         cam.cullingMask = 0;
+        headsetGrain.intensity.value = 1f;
+        staticNoiseHeadset.Play();
     }
 
     private void UnfreezeCamera()
@@ -146,5 +155,7 @@ public class Headset : MonoBehaviour
         cam = Camera.main;
         cam.cullingMask = tempCul;
         cam.clearFlags = tempFlag;
+        headsetGrain.intensity.value = 0.4f;
+        staticNoiseHeadset.Stop();
     }
 }
