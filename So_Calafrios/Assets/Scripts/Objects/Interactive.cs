@@ -23,7 +23,8 @@ public class Interactive : MonoBehaviour
     [SerializeField] private Interactive[] activationChain = default;
     [SerializeField] private Interactive[] deActivationChain = default;
     [SerializeField] private Interactive[] interactionChain = default;
-    public UnityEvent events = default;
+    public UnityEvent ActiveInteractionEvents = default;
+    public UnityEvent NoInteractionEvents = default;
     private Animator _animator;
     private int _curInteractionTextId;
     private AudioSource sound;

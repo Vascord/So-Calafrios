@@ -120,9 +120,9 @@ public class PlayerInteraction : MonoBehaviour
     {
         _currentInteractive.gameObject.SetActive(false);
         AddToInventory(_currentInteractive);
-        if(_currentInteractive.events != null)
+        if(_currentInteractive.ActiveInteractionEvents != null)
         {
-            _currentInteractive.events.Invoke();
+            _currentInteractive.ActiveInteractionEvents.Invoke();
         }
     }
 
@@ -136,9 +136,9 @@ public class PlayerInteraction : MonoBehaviour
         {
             AddEmps(numberObject);
         }
-         if(_currentInteractive.events != null)
+         if(_currentInteractive.ActiveInteractionEvents != null)
         {
-            _currentInteractive.events.Invoke();
+            _currentInteractive.ActiveInteractionEvents.Invoke();
         }
     }
 
@@ -158,9 +158,9 @@ public class PlayerInteraction : MonoBehaviour
             Interactive currentRequirement = 
                 _currentInteractive.requirements[i];
             currentRequirement.Interact();
-             if(_currentInteractive.events != null)
+             if(_currentInteractive.ActiveInteractionEvents != null)
             {
-                _currentInteractive.events.Invoke();
+                _currentInteractive.ActiveInteractionEvents.Invoke();
             }
             RemoveFromInventory(currentRequirement);
         }
@@ -224,6 +224,10 @@ public class PlayerInteraction : MonoBehaviour
             else if (_requirementsInInventory)
             {
                 InteractWithCurrentInteractive();
+            }
+            else
+            {
+                _currentInteractive.NoInteractionEvents.Invoke();
             }
         }
     }
