@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu/Menu.unity
     guid: 223ac098916621343afcd10b3da10787
   - enabled: 1
+    path: Assets/Scenes/Cinematics/StoryIntro/IntroCinematic.unity
+    guid: 13a170f2b3e37b148b4bb567bf5cbd5c
+  - enabled: 1
+    path: Assets/Scenes/Cinematics/CarIntro/CarCinematic.unity
+    guid: 73cdaf241123ab946bfdd5790cf49278
+  - enabled: 1
     path: Assets/Scenes/Tutorial/DefaultScene 1.unity
     guid: 32c0efb6e990b394b80e0ccf28f78fe7
   m_configObjects: {}

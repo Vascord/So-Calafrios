@@ -9543,12 +9543,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 312072268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ceca732124d9b84bb9a9a60c4b7cbf7, type: 3}
+  m_Script: {fileID: 11500000, guid: d802703849a5af64d9919b54e37f3aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 2037034930}
   transitionSpeed: 0.01
   transitionTimeSpeed: 0.01
+  listenerFirstScene: 0
 --- !u!114 &312072270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47610,7 +47611,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1621815114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30d84cdb146904440847f876b8eb7c42, type: 3}
+  m_Script: {fileID: 11500000, guid: 5287647956a144944afb059273279ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1221674624}

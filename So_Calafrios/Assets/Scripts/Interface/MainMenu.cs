@@ -12,21 +12,29 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private CanvasGroup image;
     [SerializeField] private float transitionSpeed;
     [SerializeField] private float transitionTimeSpeed;
+    [SerializeField] private int cinematicSceneNumber;
     [SerializeField] private int tutorialSceneNumber;
 
     /// <summary>
     /// Public method that loads the next scene depending of the scene number.
     /// </summary>
-    private void PlayGame ()
+    public void PlayGame(bool skipIntro)
     {
         fadeCanvas.SetActive(true);
-        StartCoroutine(Transition(tutorialSceneNumber));
+        if(skipIntro)
+        {
+            StartCoroutine(Transition(tutorialSceneNumber));
+        }
+        else
+        {
+            StartCoroutine(Transition(cinematicSceneNumber));
+        }
     }
 
     /// <summary>
     /// Public method which leaves the application, does not work on the editor.
     /// </summary>
-    private void QuitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }
@@ -41,10 +49,15 @@ public class MainMenu : MonoBehaviour
         while(image.alpha != 1f)
         {
             image.alpha += transitionSpeed;
+            AudioListener.volume -= transitionSpeed;
 
             if(image.alpha > 1f)
             {
                 image.alpha = 1f;
+            }
+            if(AudioListener.volume < 0f)
+            {
+                AudioListener.volume = 0f;
             }
 
             yield return new WaitForSeconds(transitionTimeSpeed);
