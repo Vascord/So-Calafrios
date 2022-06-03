@@ -9562,7 +9562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &312072269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12086,9 +12086,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToFollow: {fileID: 1221674618}
-  speed: 4.5
+  speed: 5
   deadLigth: {fileID: 1618719807003373959, guid: 30098e20637aa2a499af70e1b804a99d, type: 3}
-  countdown: 0
+  countdown: 5
 --- !u!136 &432448393
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -28324,7 +28324,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 819873490}
   m_LocalRotation: {x: 0.000000029802319, y: -0.674374, z: -0.000000014901159, w: 0.7383901}
-  m_LocalPosition: {x: -16.94, y: 194.07, z: 211.21}
+  m_LocalPosition: {x: -16.94, y: 195.73, z: 214.14}
   m_LocalScale: {x: 3.1272001, y: 5.6916, z: 18.021997}
   m_Children: []
   m_Father: {fileID: 1212286258}
@@ -78143,7 +78143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146041620}
   m_LocalRotation: {x: 0.000000059604645, y: -0.72131014, z: -0.000000059604645, w: 0.6926123}
-  m_LocalPosition: {x: -18.07, y: 192.81, z: 211.93}
+  m_LocalPosition: {x: -18.2, y: 194.94, z: 215.7}
   m_LocalScale: {x: 2.4327257, y: 4.5278387, z: 1.9507791}
   m_Children: []
   m_Father: {fileID: 1212286258}
@@ -79982,7 +79982,7 @@ MonoBehaviour:
   objectToFollow: {fileID: 1221674618}
   speed: 5
   deadLigth: {fileID: 1618719807003373959, guid: 30098e20637aa2a499af70e1b804a99d, type: 3}
-  countdown: 0
+  countdown: 3
 --- !u!1 &1500197686405717252
 GameObject:
   m_ObjectHideFlags: 0
