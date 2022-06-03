@@ -6,6 +6,7 @@ using UnityEngine;
 public class EMPTrigger : MonoBehaviour
 {
     [SerializeField] private float MAX_ZONE_DISTANCE;
+    [SerializeField] private GameObject electricEffect;
     private LayerMask layerMask;
     private RaycastHit hitInfo;
 
@@ -36,24 +37,26 @@ public class EMPTrigger : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-            Destroy(gameObject);
-            PlayerHeadsetDetect();
 
+            DestroyEMP();
         }
         // If it hits anything else, it's destroyed.
         else
         {
-            Destroy(gameObject);
-            PlayerHeadsetDetect();
+            DestroyEMP();
         }
     }
 
-    private void PlayerHeadsetDetect()
+    private void DestroyEMP()
     {
         foreach(Collider collider in Physics.OverlapSphere(
             transform.position, MAX_ZONE_DISTANCE,layerMask))
         {
             collider.transform.GetComponent<Headset>().EMPInterference();
         }
+
+        Instantiate(electricEffect, transform.position, transform.rotation);
+
+        Destroy(gameObject);
     }
 }

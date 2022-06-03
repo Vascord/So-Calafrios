@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - IgnoreEMP
+  - EMP
   layers:
   - Default
   - TransparentFX
