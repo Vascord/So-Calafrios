@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2048487557986624616
 Transform:
@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048487557986624617}
-  m_LocalRotation: {x: 0.56389374, y: -0, z: -0, w: 0.8258473}
-  m_LocalPosition: {x: -0, y: 4.89, z: 0.772}
+  m_LocalRotation: {x: 0.5848544, y: -0, z: -0, w: 0.81113833}
+  m_LocalPosition: {x: 0.00000011920929, y: 4.8899994, z: 0.7720033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6419604580342832736}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 68.651, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 71.585, y: 0, z: 0}
 --- !u!108 &2048487557986624631
 Light:
   m_ObjectHideFlags: 0
@@ -46,8 +46,8 @@ Light:
   m_Color: {r: 1, g: 0.9636752, b: 0.75, a: 1}
   m_Intensity: 20
   m_Range: 20
-  m_SpotAngle: 123.34188
-  m_InnerSpotAngle: 34.83222
+  m_SpotAngle: 52.752815
+  m_InnerSpotAngle: 52.752815
   m_CookieSize: 10
   m_Shadows:
     m_Type: 1
@@ -78,18 +78,18 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1, y: 0.016666668, z: 0.016666668, w: 4.533337}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -125,7 +125,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6419604580342832736
 Transform:
