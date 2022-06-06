@@ -36,7 +36,6 @@ public class PlayerInput : MonoBehaviour
         cheats = gameObject.GetComponent<PlayerCheats>();
         cheatOn = false;
         inGameInputs = true;
-        headsetOn = false;
     }
 
     /// <summary>

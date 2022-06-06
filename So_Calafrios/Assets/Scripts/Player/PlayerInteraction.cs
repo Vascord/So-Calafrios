@@ -158,13 +158,15 @@ public class PlayerInteraction : MonoBehaviour
             Interactive currentRequirement = 
                 _currentInteractive.requirements[i];
             currentRequirement.Interact();
-             if(_currentInteractive.ActiveInteractionEvents != null)
-            {
-                _currentInteractive.ActiveInteractionEvents.Invoke();
-            }
+            
             RemoveFromInventory(currentRequirement);
         }
 
+        if(_currentInteractive.ActiveInteractionEvents != null)
+        {
+            _currentInteractive.ActiveInteractionEvents.Invoke();
+        }
+        
         _currentInteractive.Interact();
 
         ClearCurrentInteractive();
