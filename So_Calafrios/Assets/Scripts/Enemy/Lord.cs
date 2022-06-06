@@ -12,12 +12,12 @@ public class Lord : MonoBehaviour
     [SerializeField] private float wanderSpeed;
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float destinationPointRange;
-    [SerializeField] private int destinationIndex;
     [SerializeField] private Transform[] destinationPoints;
     [SerializeField] private Transform player;
     private NavMeshAgent agent;
     private Vector3 target;
     private StateManager stateManager;
+    private int destinationIndex = -1;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -26,6 +26,7 @@ public class Lord : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         stateManager = GetComponent<StateManager>();
+        destinationIndex = Random.Range(0, destinationPoints.Length);
         UpdateDestination();
     }
 
@@ -63,6 +64,8 @@ public class Lord : MonoBehaviour
             NextDestination();
             UpdateDestination();
         }
+        
+        agent.SetDestination(target);
     }
 
     /// <summary>
@@ -79,7 +82,6 @@ public class Lord : MonoBehaviour
     private void UpdateDestination()
     {
         target = destinationPoints[destinationIndex].position;
-        agent.SetDestination(target);
     }
 
     /// <summary>
@@ -87,10 +89,6 @@ public class Lord : MonoBehaviour
     /// </summary>
     private void NextDestination()
     {
-        destinationIndex++;
-        if(destinationIndex == destinationPoints.Length)
-        {
-            destinationIndex = 0;
-        }
+        destinationIndex = Random.Range(0, destinationPoints.Length);
     }
 }

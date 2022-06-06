@@ -38,7 +38,15 @@ public class WanderingState : State
                     Vector3.Distance(player.transform.position,
                     transform.position) < lord.senseRange )
                 {
-                    canSeeThePlayer = true;
+                    RaycastHit hitPoint;
+
+                    if(Physics.Raycast(transform.position, targetDirection, out hitPoint, lord.seeRange))
+                    {
+                        if(hitPoint.collider.GetComponent<CharacterController>())
+                        {
+                            canSeeThePlayer = true;
+                        }
+                    }
                 }
             }
         }

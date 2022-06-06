@@ -25,9 +25,23 @@ public class EMPTrigger : MonoBehaviour
         if(other.gameObject.CompareTag("Player") ||
         other.gameObject.CompareTag("IgnoreEMP")){}
         // If it hits the enemy, destroy the enemy and object.
-        else if(other.gameObject.CompareTag("Enemy"))
+        else if(other.gameObject.GetComponent<SimpleSpecters>())
         {
             other.gameObject.GetComponent<SimpleSpecters>().AppearLight();
+            if(other.gameObject.GetComponent<Animator>())
+            {
+                other.gameObject.GetComponent<Animator>().enabled = true;
+                other.gameObject.GetComponent<Animator>().SetTrigger("Death");
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
+
+            DestroyEMP();
+        }
+        else if(other.gameObject.GetComponent<Lord>())
+        {
             if(other.gameObject.GetComponent<Animator>())
             {
                 other.gameObject.GetComponent<Animator>().enabled = true;
