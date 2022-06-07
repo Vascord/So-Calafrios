@@ -54,6 +54,7 @@ public class WanderingState : State
         // Change to Chase state if the Lord can see the player.
         if(canSeeThePlayer)
         {
+            canSeeThePlayer = false;
             return chaseState;
         }
         else

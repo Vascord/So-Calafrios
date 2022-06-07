@@ -40,8 +40,9 @@ public class EMPTrigger : MonoBehaviour
 
             DestroyEMP();
         }
-        else if(other.gameObject.GetComponent<Lord>())
+        else if(other.gameObject.GetComponent<Wife>())
         {
+            other.gameObject.GetComponent<Wife>().AppearLight();
             if(other.gameObject.GetComponent<Animator>())
             {
                 other.gameObject.GetComponent<Animator>().enabled = true;
@@ -51,6 +52,22 @@ public class EMPTrigger : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
+
+            DestroyEMP();
+        }
+        else if(other.gameObject.GetComponent<Lord>())
+        {
+            other.gameObject.GetComponent<Lord>().AppearLight();
+
+            // if(other.gameObject.GetComponent<Animator>())
+            // {
+            //     other.gameObject.GetComponent<Animator>().enabled = true;
+            //     other.gameObject.GetComponent<Animator>().SetTrigger("Death");
+            // }
+            // else
+            // {
+            //     Destroy(other.gameObject);
+            // }
 
             DestroyEMP();
         }

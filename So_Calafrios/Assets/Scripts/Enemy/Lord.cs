@@ -9,11 +9,13 @@ public class Lord : MonoBehaviour
     public float senseRange;
     public float seeRange;
     public float viewAngle;
+    public bool dead;
     [SerializeField] private float wanderSpeed;
     [SerializeField] private float chaseSpeed;
     [SerializeField] private float destinationPointRange;
     [SerializeField] private Transform[] destinationPoints;
     [SerializeField] private Transform player;
+    [SerializeField] private GameObject deadLigth;
     private NavMeshAgent agent;
     private Vector3 target;
     private StateManager stateManager;
@@ -90,5 +92,15 @@ public class Lord : MonoBehaviour
     private void NextDestination()
     {
         destinationIndex = Random.Range(0, destinationPoints.Length);
+    }
+
+    /// <summary>
+    /// Public method that instantiates the dead light object.
+    /// </summary>
+    public void AppearLight()
+    {
+        Instantiate(deadLigth, transform.position, transform.rotation);
+        dead = true;
+        gameObject.SetActive(false);
     }
 }

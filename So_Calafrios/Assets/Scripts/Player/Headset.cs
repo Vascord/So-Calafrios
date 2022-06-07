@@ -158,4 +158,15 @@ public class Headset : MonoBehaviour
         headsetGrain.intensity.value = 0.4f;
         staticNoiseHeadset.Stop();
     }
+
+    public void UpdateEnemiesSkin()
+    {
+        invisibleEnemiesSkin = invisibleEnemies.GetComponentsInChildren<
+            SkinnedMeshRenderer>();
+
+        foreach(SkinnedMeshRenderer invisibleEnemieSkin in invisibleEnemiesSkin)
+        {
+            invisibleEnemieSkin.enabled = headsetVolume.enabled;
+        }
+    }
 }

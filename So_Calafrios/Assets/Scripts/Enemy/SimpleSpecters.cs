@@ -47,7 +47,6 @@ public class SimpleSpecters : MonoBehaviour
     {
         chase = true;
         whispers.Play();
-
     }
 
     /// <summary>
