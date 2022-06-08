@@ -9562,7 +9562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &312072269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42506,7 +42506,7 @@ MonoBehaviour:
   mouse: {fileID: 581851757}
   sceneLight: {fileID: 1055389856}
   cameraObject: {fileID: 581851759}
-  button: {fileID: 0}
+  lvl2Button: {fileID: 0}
 --- !u!1001 &1595680367
 PrefabInstance:
   m_ObjectHideFlags: 0

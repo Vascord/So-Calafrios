@@ -4,6 +4,7 @@ using System.Collections;
 
 public class NextScene : MonoBehaviour
 {
+    [SerializeField] private GameObject transitionCanvas;
     [SerializeField] private CanvasGroup image;
     [SerializeField] private float transitionSpeed;
     [SerializeField] private float transitionTimeSpeed;
@@ -16,6 +17,7 @@ public class NextScene : MonoBehaviour
 
     public void LoadNextScene()
     {
+        transitionCanvas.SetActive(true);
         StartCoroutine(Transition());
     }
 

@@ -13,7 +13,9 @@ public class LoadOptionsPrefs : MonoBehaviour
     [SerializeField] private MouseLook mouse = default;
     [SerializeField] private Light sceneLight = default;
     [SerializeField] private Camera cameraObject = default;
-    [SerializeField] private Button button = default;
+    [SerializeField] private Button lvl2Button = default;
+    [SerializeField] private RawImage lvl2Image = default;
+
 
     /// <summary>
     /// Private method called every frame.
@@ -40,8 +42,10 @@ public class LoadOptionsPrefs : MonoBehaviour
 
             if(PlayerPrefs.GetString("lvl2") == "true")
             {
-                button.interactable = Convert.ToBoolean(PlayerPrefs.
-                    GetString("lvl2"));;
+                lvl2Button.interactable = Convert.ToBoolean(PlayerPrefs.
+                    GetString("lvl2"));
+                lvl2Image.enabled = Convert.ToBoolean(PlayerPrefs.
+                    GetString("lvl2"));
             }
         }
         else
