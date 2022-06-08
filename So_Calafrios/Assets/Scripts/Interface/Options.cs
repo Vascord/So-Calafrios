@@ -38,13 +38,18 @@ public class Options : MonoBehaviour
 
         toggle.isOn = Screen.fullScreen;
 
-        if(mouse != null || sceneLight != null || cameraSlider != null)
+        if(PlayerPrefs.GetFloat("mouse sensitivity") != 0)
         {
-            mouseSlider.value = mouse.mouseSensitivity;
-
-            lightSlider.value = sceneLight.intensity;
-
-            cameraSlider.value = cameraObject.fieldOfView;
+            mouseSlider.value = PlayerPrefs.
+                GetFloat("mouse sensitivity");
+        }
+        if(PlayerPrefs.GetFloat("brightness") != 0)
+        {
+            lightSlider.value = PlayerPrefs.GetFloat("brightness");
+        }
+        if(PlayerPrefs.GetFloat("FOV") != 0)
+        {
+            cameraSlider.value = PlayerPrefs.GetFloat("FOV");
         }
 
         // Adds all the resolutions of the existing ones to the dropdown
@@ -98,7 +103,10 @@ public class Options : MonoBehaviour
     /// <param name="value">Input of the desired mouse sensitivity.</param>
     public void SetMouseSpeed(float value)
     {
-        mouse.mouseSensitivity = value;
+        if(mouse != null)
+        {
+            mouse.mouseSensitivity = value;
+        }
         PlayerPrefs.SetFloat("mouse sensitivity", value);
     }
 
@@ -109,7 +117,10 @@ public class Options : MonoBehaviour
     /// <param name="value">Input of the desired brightness.</param>
     public void SetLight(float value)
     {
-        sceneLight.intensity = value;
+        if(sceneLight != null)
+        {
+            sceneLight.intensity = value;
+        }
         PlayerPrefs.SetFloat("brightness", value);
     }
 
@@ -120,7 +131,10 @@ public class Options : MonoBehaviour
     /// <param name="value">Input of the desired field of view.</param>
     public void SetFOV(float value)
     {
-        cameraObject.fieldOfView = value;
+        if(cameraObject != null)
+        {
+            cameraObject.fieldOfView = value;
+        }
         PlayerPrefs.SetFloat("FOV", value);
     }
 

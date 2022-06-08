@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class which manages the load of the player's options.
@@ -12,6 +13,7 @@ public class LoadOptionsPrefs : MonoBehaviour
     [SerializeField] private MouseLook mouse = default;
     [SerializeField] private Light sceneLight = default;
     [SerializeField] private Camera cameraObject = default;
+    [SerializeField] private Button button = default;
 
     /// <summary>
     /// Private method called every frame.
@@ -34,6 +36,12 @@ public class LoadOptionsPrefs : MonoBehaviour
             {
                 Screen.fullScreen = Convert.ToBoolean(PlayerPrefs.
                     GetString("screen"));
+            }
+
+            if(PlayerPrefs.GetString("lvl2") == "true")
+            {
+                button.interactable = Convert.ToBoolean(PlayerPrefs.
+                    GetString("lvl2"));;
             }
         }
         else

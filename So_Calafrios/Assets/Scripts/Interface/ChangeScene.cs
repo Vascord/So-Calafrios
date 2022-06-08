@@ -4,15 +4,15 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// Class which returns to the menu when called.
 /// </summary>
-public class ReturnMenu : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
+    [SerializeField] private int sceneNumber;
     /// <summary>
     /// Public method called to return to the menu.
     /// </summary>
     public void Return()
     {
         // Returns to Menu
-        Cursor.lockState = CursorLockMode.None;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(sceneNumber);
     }
 }

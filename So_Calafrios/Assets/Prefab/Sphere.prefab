@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_ZONE_DISTANCE: 10
-  electricEffect: {fileID: 1223646908918091122, guid: 3f0a528987dca6842852201522496dba, type: 3}
+  electricEffect: {fileID: 6977589031762469085, guid: fd3f89dbcb00ec24ea0e8485f5ff6dc0, type: 3}
 --- !u!54 &7017834534959546460
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -18,17 +18,10 @@ public class MainMenu : MonoBehaviour
     /// <summary>
     /// Public method that loads the next scene depending of the scene number.
     /// </summary>
-    public void PlayGame(bool skipIntro)
+    public void PlayGame(int sceneLoadNumber)
     {
         fadeCanvas.SetActive(true);
-        if(skipIntro)
-        {
-            StartCoroutine(Transition(tutorialSceneNumber));
-        }
-        else
-        {
-            StartCoroutine(Transition(cinematicSceneNumber));
-        }
+        StartCoroutine(Transition(sceneLoadNumber));
     }
 
     /// <summary>

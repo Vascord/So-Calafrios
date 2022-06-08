@@ -174,7 +174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &14324006
 RectTransform:
   m_ObjectHideFlags: 0
@@ -707,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 97341862}
     - target: {fileID: 6577133556291109457, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: speed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6577133556291109457, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: flashlight
@@ -7450,6 +7450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a5eb53a7f1ee8a4e99dcefb2726e223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNumber: 0
 --- !u!95 &551398792
 Animator:
   serializedVersion: 3
@@ -22432,6 +22433,7 @@ MonoBehaviour:
   mouse: {fileID: 258254663}
   sceneLight: {fileID: 1124567020}
   cameraObject: {fileID: 258254669}
+  button: {fileID: 0}
 --- !u!4 &1864482262
 Transform:
   m_ObjectHideFlags: 0
