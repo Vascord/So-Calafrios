@@ -10,12 +10,19 @@ public class Lord : MonoBehaviour
     public float seeRange;
     public float viewAngle;
     public bool dead;
+    [SerializeField] private float extraRange;
+    [SerializeField] private float musicRange;
     [SerializeField] private float wanderSpeed;
     [SerializeField] private float chaseSpeed;
+    [SerializeField] private float speedGain;
     [SerializeField] private float destinationPointRange;
     [SerializeField] private Transform[] destinationPoints;
     [SerializeField] private Transform player;
     [SerializeField] private GameObject deadLigth;
+    [SerializeField] private AudioSource spookyMusic;
+    [SerializeField] private AudioSource normalMusic;
+    [SerializeField] private AudioSource wind;
+    [SerializeField] private LayerMask detectionLayer;
     private NavMeshAgent agent;
     private Vector3 target;
     private StateManager stateManager;
@@ -52,6 +59,37 @@ public class Lord : MonoBehaviour
                 agent.speed = chaseSpeed;
                 Chase();
                 break;
+            }
+        }
+
+        // Get all the colliders of objects within range.
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 
+            musicRange, detectionLayer);
+        for(int i=0; i < colliders.Length;i++)
+        {
+            CharacterController player = colliders[i].
+                transform.GetComponent<CharacterController>();
+
+            // If one of them is has a CharacterController, the following logic
+            // will activate.
+            if(player != null)
+            {
+                if(!spookyMusic.isPlaying)
+                {
+                    spookyMusic.Play();
+                    normalMusic.volume = 0.05f;
+                    wind.volume = 0.025f;
+                }
+            }
+        }
+
+        if(colliders.Length == 0)
+        {
+            if(spookyMusic.isPlaying)
+            {
+                spookyMusic.Stop();
+                normalMusic.volume = 0.1f;
+                wind.volume = 0.05f;
             }
         }
     }
@@ -100,7 +138,13 @@ public class Lord : MonoBehaviour
     public void AppearLight()
     {
         Instantiate(deadLigth, transform.position, transform.rotation);
+        spookyMusic.Stop();
+        normalMusic.volume = 0.1f;
         dead = true;
+        wanderSpeed += speedGain;
+        chaseSpeed += speedGain * 1.5f;
+        seeRange += extraRange;
+        senseRange += extraRange;
         gameObject.SetActive(false);
     }
 }
