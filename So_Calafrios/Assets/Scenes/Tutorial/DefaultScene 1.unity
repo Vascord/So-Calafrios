@@ -76934,12 +76934,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1686621829}
     - target: {fileID: 6577133556291109463, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
+      propertyPath: begining.y
+      value: 23.079
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577133556291109463, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
+      propertyPath: afterGate.y
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577133556291109463, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: invincibleText
       value: 
       objectReference: {fileID: 2072105614}
     - target: {fileID: 6577133556291109470, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6577133556291109544, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
+      propertyPath: maxTime
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6577133556291109544, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: mainCamera
