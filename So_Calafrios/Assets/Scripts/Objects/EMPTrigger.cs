@@ -28,6 +28,7 @@ public class EMPTrigger : MonoBehaviour
         else if(other.gameObject.GetComponent<SimpleSpecters>())
         {
             other.gameObject.GetComponent<SimpleSpecters>().AppearLight();
+
             if(other.gameObject.GetComponent<Animator>())
             {
                 other.gameObject.GetComponent<Animator>().enabled = true;
@@ -43,6 +44,7 @@ public class EMPTrigger : MonoBehaviour
         else if(other.gameObject.GetComponent<Wife>())
         {
             other.gameObject.GetComponent<Wife>().AppearLight();
+
             if(other.gameObject.GetComponent<Animator>())
             {
                 other.gameObject.GetComponent<Animator>().enabled = true;
@@ -59,16 +61,6 @@ public class EMPTrigger : MonoBehaviour
         {
             other.gameObject.GetComponent<Lord>().AppearLight();
 
-            // if(other.gameObject.GetComponent<Animator>())
-            // {
-            //     other.gameObject.GetComponent<Animator>().enabled = true;
-            //     other.gameObject.GetComponent<Animator>().SetTrigger("Death");
-            // }
-            // else
-            // {
-            //     Destroy(other.gameObject);
-            // }
-
             DestroyEMP();
         }
         // If it hits anything else, it's destroyed.
@@ -78,6 +70,10 @@ public class EMPTrigger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method which destroys the EMP and instantiate the effects and
+    /// creates the effect of the headset interference.
+    /// </summary>
     private void DestroyEMP()
     {
         foreach(Collider collider in Physics.OverlapSphere(

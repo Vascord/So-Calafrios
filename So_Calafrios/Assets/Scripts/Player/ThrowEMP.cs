@@ -14,7 +14,7 @@ public class ThrowEMP : MonoBehaviour
     [SerializeField] private int maxEmps;
     [SerializeField] private float refreshTime = default;
     [SerializeField] private float maxTime = default;
-    private float period, timeDestroy;
+    private float period, timeCreate;
 
     /// <summary>
     /// Private method called before the first frame.
@@ -24,17 +24,21 @@ public class ThrowEMP : MonoBehaviour
         UpdateText();
     }
 
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
     private void Update()
     {
         if(empNumber < maxEmps)
         {
-            // This is for the battery of the flashlight.
+            // After a certain period of time, an EMP will be added to your
+            // arsenal.
             if (period > refreshTime)
             {
-                timeDestroy++;
-                if(timeDestroy == maxTime)
+                timeCreate++;
+                if(timeCreate == maxTime)
                 {
-                    timeDestroy = 0;
+                    timeCreate = 0;
                     empNumber++;
                     UpdateText();
                 }

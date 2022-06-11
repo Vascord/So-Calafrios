@@ -38,11 +38,14 @@ public class WanderingState : State
                     Vector3.Distance(player.transform.position,
                     transform.position) < lord.senseRange )
                 {
+                    // Then we see if there's an obstacle blocking that vision
                     RaycastHit hitPoint;
 
-                    if(Physics.Raycast(transform.position, targetDirection, out hitPoint, lord.seeRange))
+                    if(Physics.Raycast(transform.position, targetDirection, out 
+                        hitPoint, lord.seeRange))
                     {
-                        if(hitPoint.collider.GetComponent<CharacterController>())
+                        if(hitPoint.collider.
+                            GetComponent<CharacterController>())
                         {
                             canSeeThePlayer = true;
                         }

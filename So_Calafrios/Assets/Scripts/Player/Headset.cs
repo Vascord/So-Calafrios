@@ -17,7 +17,7 @@ public class Headset : MonoBehaviour
     [SerializeField] private Light[] lights;
     [SerializeField] private float refreshTime = default;
     [SerializeField] private float maxTime = default;
-    private float period, timeDestroy;
+    private float period, timeFreeze;
     private Camera cam;
     private int tempCul;
     private CameraClearFlags tempFlag;
@@ -31,7 +31,7 @@ public class Headset : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        // Desactivates invisible objects.
+        // Desactivates invisible objects and enemy skin.
         for (int i = 0; i < invisibleObjects.childCount; i++)
         {
             invisibleObjects.GetChild(i).gameObject.SetActive(false);
@@ -51,6 +51,9 @@ public class Headset : MonoBehaviour
         headsetVolume.profile.TryGet<FilmGrain>(out headsetGrain);
     }
 
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
     private void Update()
     {
         if(cameraFreeze)
@@ -60,18 +63,18 @@ public class Headset : MonoBehaviour
                 FreezeCamera();
             }
 
-            // This is for the battery of the flashlight.
+            // After the period of time, the camera unfreezes.
             if (period > refreshTime)
             {
-                timeDestroy++;
-                if(timeDestroy == maxTime)
+                timeFreeze++;
+                if(timeFreeze == maxTime)
                 {
                     cameraFreeze = false;
                     if(headsetVolume.enabled)
                     {
                         UnfreezeCamera();
                     }
-                    timeDestroy = 0;
+                    timeFreeze = 0;
                 }
                 period = 0;
             }
@@ -129,12 +132,18 @@ public class Headset : MonoBehaviour
         }
     }
     
+    /// <summary>
+    /// Public method which starts the headset static and freeze.
+    /// </summary>
     public void EMPInterference()
     {
         cameraFreeze = true;
-        timeDestroy = 0;
+        timeFreeze = 0;
     }
 
+    /// <summary>
+    /// Private method that Freezes the headset and creates the static.
+    /// </summary>
     private void FreezeCamera()
     {
         firstFreeze = false;
@@ -147,10 +156,11 @@ public class Headset : MonoBehaviour
         staticNoiseHeadset.Play();
     }
 
+    /// <summary>
+    /// Public method that stop the freeze and static.
+    /// </summary>
     private void UnfreezeCamera()
     {
-        // Debug.Log(tempCul);
-        // Debug.Log(tempFlag);
         firstFreeze = true;
         cam = Camera.main;
         cam.cullingMask = tempCul;
@@ -159,6 +169,10 @@ public class Headset : MonoBehaviour
         staticNoiseHeadset.Stop();
     }
 
+    /// <summary>
+    /// Public method to update the enemy skin visibility depending of the
+    /// headset volume activation.
+    /// </summary>
     public void UpdateEnemiesSkin()
     {
         invisibleEnemiesSkin = invisibleEnemies.GetComponentsInChildren<

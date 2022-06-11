@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
 
+/// <summary>
+/// Class which manages the pause on the affected objects.
+/// </summary>
 public class PauseController : MonoBehaviour
 {
     [SerializeField] private bool pausePhysics;
@@ -14,8 +17,10 @@ public class PauseController : MonoBehaviour
     private Vector3 rb3dPrevAngularVelocity;
     private bool rb3dPrevState;
 
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
+    private void Start()
     {
         PauseManager.Register(OnPause);
 
@@ -28,15 +33,25 @@ public class PauseController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method called when the object is destroyed.
+    /// </summary>
     private void OnDestroy()
     {
         PauseManager.Unregister(OnPause);
     }
 
-    void OnPause(bool isPaused)
+    /// <summary>
+    /// Public method which does the Pause logic.
+    /// </summary>
+    /// <param name="isPaused"> Value which determines if its going to pause
+    /// or unpause.</param>
+    public void OnPause(bool isPaused)
     {
+        // If the game is getting paused.
         if(isPaused)
         {
+            // Keeps the current state of the stopped component and stops them.
             foreach(var component in componentsToPause)
             {
                 if(component.enabled)
@@ -46,6 +61,7 @@ public class PauseController : MonoBehaviour
                 }
             }
 
+            // Also stops the physics if checked.
             if(pausePhysics)
             {
                 rb3dPrevState = rb3d.isKinematic;
@@ -54,8 +70,10 @@ public class PauseController : MonoBehaviour
                 rb3d.isKinematic = true;
             }
         }
+        // If the game is already paused.
         else
         {
+            // Starts the components again.
             foreach (var component in prevBehaviorState.Keys)
             {
                 component.enabled = true;
@@ -63,6 +81,7 @@ public class PauseController : MonoBehaviour
 
             prevBehaviorState.Clear();
 
+            // Starts the physics too if they were stopped.
             if(pausePhysics)
             {
                 rb3d.isKinematic = rb3dPrevState;
@@ -74,8 +93,12 @@ public class PauseController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Public method which adds every component to the list to stop the 
+    /// components.
+    /// </summary>
     [Button("Add all components")]
-    void AddAllComponents()
+    public void AddAllComponents()
     {
         componentsToPause = new List<Behaviour>(GetComponents<Behaviour>());
     }

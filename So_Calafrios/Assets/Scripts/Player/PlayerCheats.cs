@@ -20,7 +20,6 @@ public class PlayerCheats : MonoBehaviour
     /// will be used.</param>
     public void Cheats(int cheatNumber)
     {
-        // TP to begining cheat
         switch(cheatNumber) 
         {
             case 0:

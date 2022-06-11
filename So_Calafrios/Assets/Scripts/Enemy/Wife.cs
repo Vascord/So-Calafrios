@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Class which contains the behavoir of the Lord enemy depending of his State.
+/// Class which contains the behavoir of the Wife enemy.
 /// </summary>
 public class Wife : MonoBehaviour
 {
@@ -26,8 +26,8 @@ public class Wife : MonoBehaviour
     /// </summary>
     private void Update() 
     {
-         Collider[] colliders = Physics.OverlapSphere(transform.position, 
-            1000, detectionLayer);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, 1000, 
+            detectionLayer);
         for(int i=0; i < colliders.Length;i++)
         {
             CharacterController player = colliders[i].

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Class which contains the behavoir of the Lord enemy depending of his State.
+/// Class which contains the behavior of the Lord enemy depending of his State.
 /// </summary>
 public class Lord : MonoBehaviour
 {
@@ -83,6 +83,7 @@ public class Lord : MonoBehaviour
             }
         }
 
+        // If no CharacterController in the collider, then this logic activates
         if(colliders.Length == 0)
         {
             if(spookyMusic.isPlaying)
@@ -133,7 +134,8 @@ public class Lord : MonoBehaviour
     }
 
     /// <summary>
-    /// Public method that instantiates the dead light object.
+    /// Public method that instantiates the dead light object and changes 
+    /// some values on the death of the lord.
     /// </summary>
     public void AppearLight()
     {

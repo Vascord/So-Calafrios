@@ -1,27 +1,39 @@
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// Class which cleans the Text after some time.
+/// </summary>
 public class CleanAfterTime : MonoBehaviour
 {
     [SerializeField] private float refreshTime = default;
     [SerializeField] private float maxTime = default;
-    private float period, timeDestroy;
+    private float period, timeClean;
+    private TextMeshProUGUI textInBox;
+
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
+    private void Start()
+    {
+        textInBox = gameObject.GetComponent<TextMeshProUGUI>();
+    }
 
     /// <summary>
     /// Private method called every frame.
     /// </summary>
     private void Update()
     {
-        if(gameObject.GetComponent<TextMeshProUGUI>().text != "")
+        if(textInBox.text != "")
         {
-            // This is for the battery of the flashlight.
+            // After the time passes, the text will be erased from the text box.
             if (period > refreshTime)
             {
-                timeDestroy++;
-                if(timeDestroy == maxTime)
+                timeClean++;
+                if(timeClean == maxTime)
                 {
-                    gameObject.GetComponent<TextMeshProUGUI>().text = "";
-                    timeDestroy = 0;
+                    textInBox.text = "";
+                    timeClean = 0;
                 }
                 period = 0;
             }

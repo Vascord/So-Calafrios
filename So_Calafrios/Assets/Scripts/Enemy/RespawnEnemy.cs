@@ -1,7 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class which handles the death and respawn of the Lord enemy.
+/// </summary>
 public class RespawnEnemy : MonoBehaviour
 {
     [SerializeField] private Lord lord;
@@ -11,13 +12,25 @@ public class RespawnEnemy : MonoBehaviour
     [SerializeField] private WanderingState wanderingState;
     private float period, timeRespawn;
     private int destinationIndex;
+    private StateManager lordStateManager;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Private method called before the first frame.
+    /// </summary>
+    private void Start()
     {
+        lordStateManager = lord.gameObject.GetComponent<StateManager>();
+    }
+
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
+    private void Update()
+    {
+        //Checks if the Lord is dead
         if(lord.dead)
         {
-            // This is for the battery of the flashlight.
+            // Will start a countdown. At maxTime, the lord respawns.
             if (period > refreshTime)
             {
                 timeRespawn++;
@@ -32,11 +45,14 @@ public class RespawnEnemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method which does the respawn logic of the Lord.
+    /// </summary>
     private void Respawn()
     {
         lord.gameObject.SetActive(true);
 
-        lord.gameObject.GetComponent<StateManager>().currentState = wanderingState;
+        lordStateManager.currentState = wanderingState;
         lord.dead = false;
         timeRespawn = 0;
 

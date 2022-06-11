@@ -24,11 +24,11 @@ public class FadeOutStart : MonoBehaviour
     }
 
     /// <summary>
-    /// Private Courotina that does the fade out.
+    /// Private Coroutine that does the fade out.
     /// </summary>
     private IEnumerator Transition()
     {
-        // This is for the battery of the flashlight.
+        // While the image is visible, then it fades out.
         while(image.alpha != 0f)
         {
             image.alpha -= transitionSpeed;

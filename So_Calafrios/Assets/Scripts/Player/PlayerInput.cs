@@ -135,6 +135,9 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private void containing input of the player in the menus.
+    /// </summary>
     private void MenuInputs()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -143,6 +146,9 @@ public class PlayerInput : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Private method which activates the Headset.
+    /// </summary>
     public void HeadsetActivate()
     {
         headsetOn = true;

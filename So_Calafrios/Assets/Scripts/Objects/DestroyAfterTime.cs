@@ -14,7 +14,7 @@ public class DestroyAfterTime : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        // This is for the battery of the flashlight.
+        // After the time passes, the text will be erased from the text box.
         if (period > refreshTime)
         {
             timeDestroy++;

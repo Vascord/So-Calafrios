@@ -73,7 +73,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player changes the resolution of the
+    /// Public method called when the player changes the resolution of the
     /// game.
     /// </summary>
     /// <param name="resolutionIndex">Input of the resolution's associated 
@@ -86,7 +86,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player changes the volume of the
+    /// Public method called when the player changes the volume of the
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="volume">Input of the desired volume.</param>
@@ -97,7 +97,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player changes the mouse sensitivity of 
+    /// Public method called when the player changes the mouse sensitivity of 
     /// the game and saves it in player prefs.
     /// </summary>
     /// <param name="value">Input of the desired mouse sensitivity.</param>
@@ -111,7 +111,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player changes the brightness of the
+    /// Public method called when the player changes the brightness of the
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="value">Input of the desired brightness.</param>
@@ -125,7 +125,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player changes the field of view of the
+    /// Public method called when the player changes the field of view of the
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="value">Input of the desired field of view.</param>
@@ -139,7 +139,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player changes the quality of the
+    /// Public method called when the player changes the quality of the
     /// game and saves it in player prefs.
     /// </summary>
     /// <param name="qualityIndex">Input of the quality's associated 
@@ -151,7 +151,7 @@ public class Options : MonoBehaviour
     }
 
     /// <summary>
-    /// Private method called when the player wants fullscreen or not 
+    /// Public method called when the player wants fullscreen or not 
     /// and saves it in player prefs.
     /// </summary>
     public void SetFullscreen()

@@ -9,12 +9,17 @@ public class NextScene : MonoBehaviour
     [SerializeField] private float transitionSpeed;
     [SerializeField] private float transitionTimeSpeed;
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Private method called every frame.
+    /// </summary>
+    private void Update()
     {
         if(Input.GetKeyUp(KeyCode.Escape)) { LoadNextScene();}
     }
 
+    /// <summary>
+    /// Public method called to activate the Coroutine.
+    /// </summary>
     public void LoadNextScene()
     {
         transitionCanvas.SetActive(true);
@@ -22,13 +27,12 @@ public class NextScene : MonoBehaviour
     }
 
     /// <summary>
-    /// Private Courotina that does the fade in and loads the scene.
+    /// Private Coroutine that does the fade in and loads the next scene.
     /// </summary>
-    /// <param name="sceneNumber">Number of the scene to load.</param>
     private IEnumerator Transition()
     {
         
-        // This is for the battery of the flashlight.
+        // While the image is not fully visible, then it fades in.
         while(image.alpha != 1f)
         {
             image.alpha += transitionSpeed;
