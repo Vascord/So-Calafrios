@@ -16736,7 +16736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &413730747
 Transform:
   m_ObjectHideFlags: 0
@@ -16744,13 +16744,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 413730746}
-  m_LocalRotation: {x: -0.27693713, y: 0.61622226, z: 0.16598321, w: -0.71834916}
-  m_LocalPosition: {x: -2.9684, y: 0.054, z: -0.3658}
-  m_LocalScale: {x: 0.018020565, y: 0.044095285, z: 0.24176103}
+  m_LocalRotation: {x: -0.23745105, y: 0.74928325, z: 0.21877284, w: -0.5782128}
+  m_LocalPosition: {x: -3.0529, y: 0.2123, z: -0.6244}
+  m_LocalScale: {x: 0.018020565, y: 0.044095285, z: 0.9394592}
   m_Children: []
   m_Father: {fileID: 664824413}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 11.146, y: -444.904, z: -36.223}
+  m_LocalEulerAnglesHint: {x: -3.053, y: -463.648, z: -37.568}
 --- !u!114 &413730748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16773,7 +16773,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 520fae1947e647241b11e847b9368852, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: e74d0110cbb97d742b80aa3319ef355f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -44270,13 +44270,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431631856}
-  m_LocalRotation: {x: -0, y: 0.9784465, z: -0, w: -0.20650062}
-  m_LocalPosition: {x: -93.04, y: 67.5, z: -27.47}
-  m_LocalScale: {x: 3.1272001, y: 13.497421, z: 31.857197}
+  m_LocalRotation: {x: 0.00000009685755, y: 0.92715144, z: -0, w: -0.37468693}
+  m_LocalPosition: {x: -102.1, y: 69.3, z: -23.3}
+  m_LocalScale: {x: 3.1272001, y: 13.497421, z: 53.102764}
   m_Children: []
   m_Father: {fileID: 2065878940}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 203.835, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 224.01, z: 0}
 --- !u!65 &1431631859
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44350,6 +44350,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 503315488}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 011ef9c8acab85e45b12e10115374490, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -45566,6 +45578,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 503315488}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: dbbbfc20787ec9c49a69269badca48e3, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -87289,7 +87313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6577133556291109456, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: m_Height
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6577133556291109457, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: speed
@@ -87313,7 +87337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6577133556291109459, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.079
+      value: 22.85
       objectReference: {fileID: 0}
     - target: {fileID: 6577133556291109459, guid: 5e0bbefcbd2c9e24e9230a980dbc54a0, type: 3}
       propertyPath: m_LocalPosition.z
