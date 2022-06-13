@@ -748,8 +748,8 @@ MonoBehaviour:
 
     At Regaleira''s Gate'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7b254721f1999a94a8d66f2432fa135c, type: 2}
+  m_sharedMaterial: {fileID: -1015333572113668541, guid: 7b254721f1999a94a8d66f2432fa135c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
