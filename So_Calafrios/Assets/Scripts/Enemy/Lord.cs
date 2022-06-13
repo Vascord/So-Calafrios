@@ -105,8 +105,9 @@ public class Lord : MonoBehaviour
             NextDestination();
             UpdateDestination();
         }
-        
+
         agent.SetDestination(target);
+        
     }
 
     /// <summary>
